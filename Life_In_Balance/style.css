@@ -1137,22 +1137,35 @@ Hero section
 		text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 	}
 	.text-slider .maintitle {
+		padding: 20px 0;
 		position: relative;
 		display: inline-block;
-		font-size: 57px;
+		font-size: 77px;
 		line-height: 67px;
 		font-weight: 700;
-		padding-bottom: 10px;
 	}
 	.text-slider .maintitle:after {
 		content: "";
 		position: absolute;
+		background-color: #ffffff !important;
 		left: 50%;
 		bottom: 0;
 		width: 40%;
-		height: 1px;
+		height: 3px;
 		margin-left: -20%;
 	}
+
+	.text-slider .maintitle:before {
+		content: "";
+		position: absolute;
+		background-color: #ffffff !important;
+		left: 50%;
+		top: 0;
+		width: 40%;
+		height: 3px;
+		margin-left: -20%;
+	}
+
 	.text-slider .subtitle {
 		font-size: 30px;
 		line-height: 40px;

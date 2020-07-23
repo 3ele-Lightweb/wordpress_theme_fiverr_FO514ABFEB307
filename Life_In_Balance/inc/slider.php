@@ -106,6 +106,9 @@ function life_in_balance_slider_template() {
 endif;
 
 function life_in_balance_slider_button() {
+    if (empty(get_theme_mod('slider_button_text'))) {
+        return False;
+    }
 
     if ( !function_exists('pll_register_string') ) {
         $slider_button      = get_theme_mod('slider_button_text', 'Click to begin');

@@ -12,18 +12,18 @@
 	<?php endif; // End header image check. ?>
 
  *
- * @package Sydney
+ * @package Life_In_Balance
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses sydney_header_style()
- * @uses sydney_admin_header_style()
- * @uses sydney_admin_header_image()
+ * @uses life_in_balance_header_style()
+ * @uses life_in_balance_admin_header_style()
+ * @uses life_in_balance_admin_header_image()
  */
-function sydney_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'sydney_custom_header_args', array(
+function life_in_balance_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'life_in_balance_custom_header_args', array(
 		'default-image'          => get_template_directory_uri() . '/images/header.jpg',
 		'default-text-color'     => '000000',
 		'width'                  => 1920,
@@ -31,33 +31,33 @@ function sydney_custom_header_setup() {
 		'flex-height'            => true,
 		'video'					 => true,
 		'video-active-callback'  => '',
-		'wp-head-callback'       => 'sydney_header_style',
-		'admin-head-callback'    => 'sydney_admin_header_style',
-		'admin-preview-callback' => 'sydney_admin_header_image',
+		'wp-head-callback'       => 'life_in_balance_header_style',
+		'admin-head-callback'    => 'life_in_balance_admin_header_style',
+		'admin-preview-callback' => 'life_in_balance_admin_header_image',
 	) ) );
 }
-add_action( 'after_setup_theme', 'sydney_custom_header_setup' );
+add_action( 'after_setup_theme', 'life_in_balance_custom_header_setup' );
 
 /**
  * Video header settings
  */
-function sydney_video_settings( $settings ) {
-	$settings['l10n']['play'] 	= '<i class="sydney-svg-icon">' . sydney_get_svg_icon( "icon-play", false ) . '</i>';
-	$settings['l10n']['pause'] 	= '<i class="sydney-svg-icon">' . sydney_get_svg_icon( "icon-pause", false ) . '</i>';
+function life_in_balance_video_settings( $settings ) {
+	$settings['l10n']['play'] 	= '<i class="life_in_balance-svg-icon">' . life_in_balance_get_svg_icon( "icon-play", false ) . '</i>';
+	$settings['l10n']['pause'] 	= '<i class="life_in_balance-svg-icon">' . life_in_balance_get_svg_icon( "icon-pause", false ) . '</i>';
 	$settings['minWidth'] 		= '100';
 	$settings['minHeight'] 		= '100';	
 	
 	return $settings;
 }
-add_filter( 'header_video_settings', 'sydney_video_settings' );
+add_filter( 'header_video_settings', 'life_in_balance_video_settings' );
 
-if ( ! function_exists( 'sydney_header_style' ) ) :
+if ( ! function_exists( 'life_in_balance_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
- * @see sydney_custom_header_setup().
+ * @see life_in_balance_custom_header_setup().
  */
-function sydney_header_style() {
+function life_in_balance_header_style() {
 	if ( get_header_image() && ( get_theme_mod('front_header_type') == 'image' && is_front_page() || get_theme_mod('site_header_type', 'image') == 'image' && !is_front_page() ) ) {
 	?>
 	<style type="text/css">
@@ -78,15 +78,15 @@ function sydney_header_style() {
 	<?php
 	}
 }
-endif; // sydney_header_style
+endif; // life_in_balance_header_style
 
-if ( ! function_exists( 'sydney_admin_header_style' ) ) :
+if ( ! function_exists( 'life_in_balance_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * @see sydney_custom_header_setup().
+ * @see life_in_balance_custom_header_setup().
  */
-function sydney_admin_header_style() {
+function life_in_balance_admin_header_style() {
 ?>
 	<style type="text/css">
 		.appearance_page_custom-header #headimg {
@@ -106,15 +106,15 @@ function sydney_admin_header_style() {
 	</style>
 <?php
 }
-endif; // sydney_admin_header_style
+endif; // life_in_balance_admin_header_style
 
-if ( ! function_exists( 'sydney_admin_header_image' ) ) :
+if ( ! function_exists( 'life_in_balance_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
- * @see sydney_custom_header_setup().
+ * @see life_in_balance_custom_header_setup().
  */
-function sydney_admin_header_image() {
+function life_in_balance_admin_header_image() {
 	$style = sprintf( ' style="color:#%s;"', get_header_textcolor() );
 ?>
 	<div id="headimg">
@@ -126,4 +126,4 @@ function sydney_admin_header_image() {
 	</div>
 <?php
 }
-endif; // sydney_admin_header_image
+endif; // life_in_balance_admin_header_image

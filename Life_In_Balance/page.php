@@ -7,7 +7,7 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package Sydney
+ * @package Life_In_Balance
  */
 
 get_header(); ?>

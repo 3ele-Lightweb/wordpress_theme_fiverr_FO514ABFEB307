@@ -25,24 +25,24 @@
 	font-size: 16px;
     max-width: 600px;
 }
-.sydney-theme-tabs {
+.life_in_balance-theme-tabs {
 	margin-top: 45px;
 }
-.sydney-tab {
+.life_in_balance-tab {
 	display: none;
 	padding: 30px 10px;
 }
-.sydney-tab.show {
+.life_in_balance-tab.show {
 	display: block;
 }
-.sydney-tab-nav .nav-button {
+.life_in_balance-tab-nav .nav-button {
 	font-size: 18px;
 }
-.sydney-tab-nav a:active,
-.sydney-tab-nav a:focus {
+.life_in_balance-tab-nav a:active,
+.life_in_balance-tab-nav a:focus {
 	box-shadow: none;
 }
-.sydney-tab-nav .nav-button.active {
+.life_in_balance-tab-nav .nav-button.active {
 	background-color: transparent;
 	border-bottom: 1px solid #fff;
 	margin-bottom: -1px;
@@ -59,29 +59,29 @@
 .tab-column:last-of-type {
 	float: right;
 }
-.sydney-tab.support .dashicons {
+.life_in_balance-tab.support .dashicons {
     display: block;
     font-size: 32px;
     height: auto;
     width: auto;
     text-align: left;
 }
-.sydney-tab.table table {
+.life_in_balance-tab.table table {
 	border-collapse: collapse;
 }
-.sydney-tab.table th,
-.sydney-tab.table td {
+.life_in_balance-tab.table th,
+.life_in_balance-tab.table td {
 	border: 1px solid #ebebeb;
 	padding: 20px;
 	text-align: center;
 }
-.sydney-tab .dash-green {
+.life_in_balance-tab .dash-green {
 	color: #5ad15a;
     font-size: 28px;
     height: auto;
     width: auto;
 }
-.sydney-tab .dash-red {
+.life_in_balance-tab .dash-red {
 	color: #fc6f6f;
     font-size: 28px;
     height: auto;

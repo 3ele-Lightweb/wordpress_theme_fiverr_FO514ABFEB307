@@ -1,11 +1,11 @@
 <?php
 
-class Sydney_Action extends WP_Widget {
+class Life_In_Balance_Action extends WP_Widget {
 
 	public function __construct() {
-		$widget_ops = array('classname' => 'sydney_action_widget', 'description' => __( 'Display a call to action block.', 'sydney') );
-        parent::__construct(false, $name = __('Sydney FP: Call to action', 'sydney'), $widget_ops);
-		$this->alt_option_name = 'sydney_action_widget';
+		$widget_ops = array('classname' => 'life_in_balance_action_widget', 'description' => __( 'Display a call to action block.', 'life_in_balance') );
+        parent::__construct(false, $name = __('Life_In_Balance FP: Call to action', 'life_in_balance'), $widget_ops);
+		$this->alt_option_name = 'life_in_balance_action_widget';
     }
 	
 	function form($instance) {
@@ -15,16 +15,16 @@ class Sydney_Action extends WP_Widget {
 		$action_btn_text 	= isset( $instance['action_btn_text'] ) ? esc_html( $instance['action_btn_text'] ) : '';
 		$inline 			= isset( $instance['inline'] ) ? (bool) $instance['inline'] : false;
 	?>
-	<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'sydney'); ?></label>
+	<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'life_in_balance'); ?></label>
 	<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></p>
-	<p><label for="<?php echo $this->get_field_id('action_text'); ?>"><?php _e('Enter your call to action.', 'sydney'); ?></label>
+	<p><label for="<?php echo $this->get_field_id('action_text'); ?>"><?php _e('Enter your call to action.', 'life_in_balance'); ?></label>
 	<textarea class="widefat" id="<?php echo $this->get_field_id('action_text'); ?>" name="<?php echo $this->get_field_name('action_text'); ?>"><?php echo $action_text; ?></textarea></p>
-	<p><label for="<?php echo $this->get_field_id('action_btn_link'); ?>"><?php _e('Link for the button', 'sydney'); ?></label>
+	<p><label for="<?php echo $this->get_field_id('action_btn_link'); ?>"><?php _e('Link for the button', 'life_in_balance'); ?></label>
 	<input class="widefat" id="<?php echo $this->get_field_id('action_btn_link'); ?>" name="<?php echo $this->get_field_name('action_btn_link'); ?>" type="text" value="<?php echo $action_btn_link; ?>" /></p>
-	<p><label for="<?php echo $this->get_field_id('action_btn_text'); ?>"><?php _e('Title for the button', 'sydney'); ?></label>
+	<p><label for="<?php echo $this->get_field_id('action_btn_text'); ?>"><?php _e('Title for the button', 'life_in_balance'); ?></label>
 	<input class="widefat" id="<?php echo $this->get_field_id('action_btn_text'); ?>" name="<?php echo $this->get_field_name('action_btn_text'); ?>" type="text" value="<?php echo $action_btn_text; ?>" /></p>
 	<p><input class="checkbox" type="checkbox" <?php checked( $inline ); ?> id="<?php echo $this->get_field_id( 'inline' ); ?>" name="<?php echo $this->get_field_name( 'inline' ); ?>" />
-	<label for="<?php echo $this->get_field_id( 'inline' ); ?>"><?php _e( 'Display the button inline with the text?', 'sydney' ); ?></label></p>
+	<label for="<?php echo $this->get_field_id( 'inline' ); ?>"><?php _e( 'Display the button inline with the text?', 'life_in_balance' ); ?></label></p>
 	<?php
 	}
 

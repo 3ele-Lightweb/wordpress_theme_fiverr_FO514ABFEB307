@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features
  *
- * @package Sydney
+ * @package Life_In_Balance
  */
 
 /**
@@ -13,7 +13,7 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function sydney_body_classes( $classes ) {
+function life_in_balance_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
@@ -21,15 +21,15 @@ function sydney_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'sydney_body_classes' );
+add_filter( 'body_class', 'life_in_balance_body_classes' );
 
 /**
  * Support for Yoast SEO breadcrumbs
  */
-function sydney_yoast_seo_breadcrumbs() {
+function life_in_balance_yoast_seo_breadcrumbs() {
 	if ( function_exists('yoast_breadcrumb') ) {
 		yoast_breadcrumb('
-		<p class="sydney-breadcrumbs">','</p>
+		<p class="life_in_balance-breadcrumbs">','</p>
 		');
 	}
 }

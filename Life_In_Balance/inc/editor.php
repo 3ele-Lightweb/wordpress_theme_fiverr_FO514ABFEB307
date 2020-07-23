@@ -4,10 +4,10 @@
  * Gutenberg support
  */
 
-function sydney_editor_styles() {
-	wp_enqueue_style( 'sydney-block-editor-styles', get_theme_file_uri( '/sydney-gutenberg-editor-styles.css' ), '', '1.0', 'all' );
+function life_in_balance_editor_styles() {
+	wp_enqueue_style( 'life_in_balance-block-editor-styles', get_theme_file_uri( '/life_in_balance-gutenberg-editor-styles.css' ), '', '1.0', 'all' );
 
-	wp_enqueue_style( 'sydney-fonts', esc_url( sydney_enqueue_google_fonts() ), array(), null );
+	wp_enqueue_style( 'life_in_balance-fonts', esc_url( life_in_balance_enqueue_google_fonts() ), array(), null );
 
 
 	//Dynamic styles
@@ -82,7 +82,7 @@ function sydney_editor_styles() {
 
 	
 	//Output all the styles
-	wp_add_inline_style( 'sydney-block-editor-styles', $custom );	
+	wp_add_inline_style( 'life_in_balance-block-editor-styles', $custom );	
 
 }
-add_action( 'enqueue_block_editor_assets', 'sydney_editor_styles' );
+add_action( 'enqueue_block_editor_assets', 'life_in_balance_editor_styles' );

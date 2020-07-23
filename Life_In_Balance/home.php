@@ -2,20 +2,20 @@
 /**
  * The home template file.
  *
- * @package Sydney
+ * @package Life_In_Balance
  */
 
 get_header(); 
 
-$layout = sydney_blog_layout();
+$layout = life_in_balance_blog_layout();
 
 ?>
 
-	<?php do_action('sydney_before_content'); ?>
+	<?php do_action('life_in_balance_before_content'); ?>
 
 	<div id="primary" class="content-area col-md-9 <?php echo esc_attr($layout); ?>">
 
-		<?php sydney_yoast_seo_breadcrumbs(); ?>
+		<?php life_in_balance_yoast_seo_breadcrumbs(); ?>
 		
 		<main id="main" class="post-wrap" role="main">
 
@@ -52,7 +52,7 @@ $layout = sydney_blog_layout();
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-	<?php do_action('sydney_after_content'); ?>
+	<?php do_action('life_in_balance_after_content'); ?>
 
 <?php 
 	if ( ( $layout == 'modern' ) || ( $layout == 'classic-alt' ) || ( $layout == 'classic' ) ) :

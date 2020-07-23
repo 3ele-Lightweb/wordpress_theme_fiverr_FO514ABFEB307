@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Sydney
+ * @package Life_In_Balance
  */
 ?>
 
@@ -9,11 +9,11 @@
 	<header class="entry-header">
 		<?php if ( 'post' == get_post_type() && get_theme_mod('hide_meta_index') != 1 ) : ?>
 		<div class="meta-post">
-			<?php sydney_get_first_cat(); ?>
+			<?php life_in_balance_get_first_cat(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 		<?php the_title( sprintf( '<h2 class="title-post entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-		<?php sydney_post_date(); ?>
+		<?php life_in_balance_post_date(); ?>
 	</header><!-- .entry-header -->
 
 	<?php if ( has_post_thumbnail() && ( get_theme_mod( 'index_feat_image' ) != 1 ) ) : ?>
@@ -31,13 +31,13 @@
 
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'sydney' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'life_in_balance' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-post -->
 
 	<footer class="entry-footer">
-		<?php sydney_entry_footer(); ?>
+		<?php life_in_balance_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

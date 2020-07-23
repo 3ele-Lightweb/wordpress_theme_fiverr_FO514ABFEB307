@@ -5,7 +5,7 @@
  * @since  1.0.0
  * @access public
  */
-final class Sydney_Customize_Upsell {
+final class Life_In_Balance_Customize_Upsell {
 
 	/**
 	 * Returns the instance.
@@ -65,17 +65,17 @@ final class Sydney_Customize_Upsell {
 		require_once( trailingslashit( get_template_directory() ) . 'inc/upsell/section-pro.php' );
 
 		// Register custom section types.
-		$manager->register_section_type( 'Sydney_Customize_Upsell_Section_Pro' );
+		$manager->register_section_type( 'Life_In_Balance_Customize_Upsell_Section_Pro' );
 
 		// Register sections.
 		$manager->add_section(
-			new Sydney_Customize_Upsell_Section_Pro(
+			new Life_In_Balance_Customize_Upsell_Section_Pro(
 				$manager,
-				'sydney_upsell',
+				'life_in_balance_upsell',
 				array(
-					'title'    => esc_html__( 'Ready for more?', 'sydney' ),
-					'pro_text' => esc_html__( 'Get Sydney Pro',  'sydney' ),
-					'pro_url'  => 'https://athemes.com/theme/sydney-pro/?utm_source=theme_customizer&utm_medium=sydney_customizer&utm_campaign=Sydney',
+					'title'    => esc_html__( 'Ready for more?', 'life_in_balance' ),
+					'pro_text' => esc_html__( 'Get Life_In_Balance Pro',  'life_in_balance' ),
+					'pro_url'  => 'https://athemes.com/theme/life_in_balance-pro/?utm_source=theme_customizer&utm_medium=life_in_balance_customizer&utm_campaign=Life_In_Balance',
 					'priority' => 999,
 				)
 			)
@@ -91,11 +91,11 @@ final class Sydney_Customize_Upsell {
 	 */
 	public function enqueue_control_scripts() {
 
-		wp_enqueue_script( 'sydney-upsell-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/upsell/customize-controls.js', array( 'customize-controls' ) );
+		wp_enqueue_script( 'life_in_balance-upsell-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/upsell/customize-controls.js', array( 'customize-controls' ) );
 
-		wp_enqueue_style( 'sydney-upsell-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/upsell/customize-controls.css' );
+		wp_enqueue_style( 'life_in_balance-upsell-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/upsell/customize-controls.css' );
 	}
 }
 
 // Doing this customizer thang!
-Sydney_Customize_Upsell::get_instance();
+Life_In_Balance_Customize_Upsell::get_instance();

@@ -1,11 +1,11 @@
 <?php
 
-class Sydney_Video_Widget extends WP_Widget {
+class Life_In_Balance_Video_Widget extends WP_Widget {
 
 	public function __construct() {
-		$widget_ops = array('classname' => 'sydney_video_widget_widget', 'description' => __( 'Display a video from Youtube, Vimeo etc.', 'sydney') );
-        parent::__construct(false, $name = __('Sydney: Video', 'sydney'), $widget_ops);
-		$this->alt_option_name = 'sydney_video_widget';
+		$widget_ops = array('classname' => 'life_in_balance_video_widget_widget', 'description' => __( 'Display a video from Youtube, Vimeo etc.', 'life_in_balance') );
+        parent::__construct(false, $name = __('Life_In_Balance: Video', 'life_in_balance'), $widget_ops);
+		$this->alt_option_name = 'life_in_balance_video_widget';
     }
 	
 	function form($instance) {
@@ -17,19 +17,19 @@ class Sydney_Video_Widget extends WP_Widget {
 	?>
 
 	<p>
-	<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'sydney'); ?></label>
+	<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'life_in_balance'); ?></label>
 	<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
 	</p>
 
-	<p><label for="<?php echo $this->get_field_id( 'url' ); ?>"><?php _e( 'Paste the URL of the video (only from a network that supports oEmbed, like Youtube, Vimeo etc.):', 'sydney' ); ?></label>
+	<p><label for="<?php echo $this->get_field_id( 'url' ); ?>"><?php _e( 'Paste the URL of the video (only from a network that supports oEmbed, like Youtube, Vimeo etc.):', 'life_in_balance' ); ?></label>
 	<input class="widefat" id="<?php echo $this->get_field_id( 'url' ); ?>" name="<?php echo $this->get_field_name( 'url' ); ?>" type="text" value="<?php echo $url; ?>" size="3" /></p>
-	<p><label for="<?php echo $this->get_field_id('video_mode'); ?>"><?php _e('Video mode:', 'sydney'); ?></label>
+	<p><label for="<?php echo $this->get_field_id('video_mode'); ?>"><?php _e('Video mode:', 'life_in_balance'); ?></label>
         <select name="<?php echo $this->get_field_name('video_mode'); ?>" id="<?php echo $this->get_field_id('video_mode'); ?>">		
-			<option value="vid-normal" <?php if ( 'vid-normal' == $video_mode ) echo 'selected="selected"'; ?>><?php echo __('Normal', 'sydney'); ?></option>
-			<option value="vid-lightbox" <?php if ( 'vid-lightbox' == $video_mode ) echo 'selected="selected"'; ?>><?php echo __('Lightbox', 'sydney'); ?></option>
+			<option value="vid-normal" <?php if ( 'vid-normal' == $video_mode ) echo 'selected="selected"'; ?>><?php echo __('Normal', 'life_in_balance'); ?></option>
+			<option value="vid-lightbox" <?php if ( 'vid-lightbox' == $video_mode ) echo 'selected="selected"'; ?>><?php echo __('Lightbox', 'life_in_balance'); ?></option>
        	</select>
     </p>  
-	<p><label for="<?php echo $this->get_field_id( 'text' ); ?>"><?php _e( 'Text before the play button (only for lightbox mode):', 'sydney' ); ?></label>
+	<p><label for="<?php echo $this->get_field_id( 'text' ); ?>"><?php _e( 'Text before the play button (only for lightbox mode):', 'life_in_balance' ); ?></label>
 	<textarea class="widefat" rows="6" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea></p>
 
 	<?php
@@ -66,9 +66,9 @@ class Sydney_Video_Widget extends WP_Widget {
 		if ( $title ) echo $before_title . $title . $after_title;
 		
 		if( ($url) ) {
-			echo '<div class="sydney-video ' . $video_mode . '">';
+			echo '<div class="life_in_balance-video ' . $video_mode . '">';
 				echo '<div class="video-overlay">';
-				echo '<div class="sydney-video-inner"><span class="close-popup"><i class="fa fa-times"></i></span>' . wp_oembed_get($url) . '</div>';
+				echo '<div class="life_in_balance-video-inner"><span class="close-popup"><i class="fa fa-times"></i></span>' . wp_oembed_get($url) . '</div>';
 				echo '</div>';
 				echo '<div class="video-text">' . $text . '</div>';
 				echo '<a href="#" class="toggle-popup"><i class="fa fa-play"></i></a>';

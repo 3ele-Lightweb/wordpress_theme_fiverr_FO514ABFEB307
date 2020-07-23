@@ -1,21 +1,21 @@
 <?php
 /**
- * Sydney Theme Customizer
+ * Life_In_Balance Theme Customizer
  *
- * @package Sydney
+ * @package Life_In_Balance
  */
 
-function sydney_customize_register( $wp_customize ) {
+function life_in_balance_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->remove_control( 'header_textcolor' );
     $wp_customize->remove_control( 'display_header_text' );
-    $wp_customize->get_section( 'header_image' )->panel = 'sydney_header_panel';
+    $wp_customize->get_section( 'header_image' )->panel = 'life_in_balance_header_panel';
     $wp_customize->get_section( 'header_image' )->priority = '13';
     $wp_customize->get_section( 'title_tagline' )->priority = '9';
-    $wp_customize->get_section( 'title_tagline' )->title = __('Site title/tagline/logo', 'sydney');
-    $wp_customize->get_section( 'colors' )->title = __('General', 'sydney');
-    $wp_customize->get_section( 'colors' )->panel = 'sydney_colors_panel';
+    $wp_customize->get_section( 'title_tagline' )->title = __('Site title/tagline/logo', 'life_in_balance');
+    $wp_customize->get_section( 'colors' )->title = __('General', 'life_in_balance');
+    $wp_customize->get_section( 'colors' )->panel = 'life_in_balance_colors_panel';
     $wp_customize->get_section( 'colors' )->priority = '10';
 
 
@@ -23,26 +23,26 @@ function sydney_customize_register( $wp_customize ) {
     for ($i = 1; $i < 5; $i++) { 
         $wp_customize->selective_refresh->add_partial( 'slider_title_' . $i, array(
             'selector'          => '.slide-item-' . $i . ' .maintitle',
-            'render_callback'   => 'sydney_partial_slider_title_' . $i,
+            'render_callback'   => 'life_in_balance_partial_slider_title_' . $i,
         ) );
         $wp_customize->selective_refresh->add_partial( 'slider_subtitle_' . $i, array(
             'selector'          => '.slide-item-' . $i . ' .subtitle',
-            'render_callback'   => 'sydney_partial_slider_subtitle_' . $i,
+            'render_callback'   => 'life_in_balance_partial_slider_subtitle_' . $i,
         ) );        
     }    
     $wp_customize->selective_refresh->add_partial( 'slider_button_text', array(
         'selector'          => '.button-slider',
-        'render_callback'   => 'sydney_partial_slider_button_text',
+        'render_callback'   => 'life_in_balance_partial_slider_button_text',
     ) );   
 
     //Divider
-    class Sydney_Divider extends WP_Customize_Control {
+    class Life_In_Balance_Divider extends WP_Customize_Control {
          public function render_content() {
             echo '<hr style="margin: 15px 0;border-top: 1px dashed #919191;" />';
          }
     }
     //Titles
-    class Sydney_Info extends WP_Customize_Control {
+    class Life_In_Balance_Info extends WP_Customize_Control {
         public $type = 'info';
         public $label = '';
         public function render_content() {
@@ -52,7 +52,7 @@ function sydney_customize_register( $wp_customize ) {
         }
     }    
     //Titles
-    class Sydney_Theme_Info extends WP_Customize_Control {
+    class Life_In_Balance_Theme_Info extends WP_Customize_Control {
         public $type = 'info';
         public $label = '';
         public function render_content() {
@@ -65,9 +65,9 @@ function sydney_customize_register( $wp_customize ) {
 
     //___General___//
     $wp_customize->add_section(
-        'sydney_general',
+        'life_in_balance_general',
         array(
-            'title'         => __('General', 'sydney'),
+            'title'         => __('General', 'life_in_balance'),
             'priority'      => 8,
         )
     );
@@ -75,17 +75,17 @@ function sydney_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'wrapper_top_padding',
         array(
-            'default' => __('83','sydney'),
+            'default' => __('83','life_in_balance'),
             'sanitize_callback' => 'absint',
         )
     );
     $wp_customize->add_control(
         'wrapper_top_padding',
         array(
-            'label'         => __( 'Page wrapper - top padding', 'sydney' ),
-            'section'       => 'sydney_general',
+            'label'         => __( 'Page wrapper - top padding', 'life_in_balance' ),
+            'section'       => 'life_in_balance_general',
             'type'          => 'number',
-            'description'   => __('Top padding for the page wrapper (the space between the header and the page title)', 'sydney'),       
+            'description'   => __('Top padding for the page wrapper (the space between the header and the page title)', 'life_in_balance'),       
             'priority'      => 10,
             'input_attrs' => array(
                 'min'   => 0,
@@ -98,17 +98,17 @@ function sydney_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'wrapper_bottom_padding',
         array(
-            'default' => __('100','sydney'),
+            'default' => __('100','life_in_balance'),
             'sanitize_callback' => 'absint',
         )
     );
     $wp_customize->add_control(
         'wrapper_bottom_padding',
         array(
-            'label'         => __( 'Page wrapper - bottom padding', 'sydney' ),
-            'section'       => 'sydney_general',
+            'label'         => __( 'Page wrapper - bottom padding', 'life_in_balance' ),
+            'section'       => 'life_in_balance_general',
             'type'          => 'number',
-            'description'   => __('Bottom padding for the page wrapper (the space between the page content and the footer)', 'sydney'),       
+            'description'   => __('Bottom padding for the page wrapper (the space between the page content and the footer)', 'life_in_balance'),       
             'priority'      => 10,
             'input_attrs' => array(
                 'min'   => 0,
@@ -119,20 +119,20 @@ function sydney_customize_register( $wp_customize ) {
     );
 
     //___Header area___//
-    $wp_customize->add_panel( 'sydney_header_panel', array(
+    $wp_customize->add_panel( 'life_in_balance_header_panel', array(
         'priority'       => 10,
         'capability'     => 'edit_theme_options',
         'theme_supports' => '',
-        'title'          => __('Header area', 'sydney'),
+        'title'          => __('Header area', 'life_in_balance'),
     ) );
     //___Header type___//
     $wp_customize->add_section(
-        'sydney_header_type',
+        'life_in_balance_header_type',
         array(
-            'title'         => __('Header type', 'sydney'),
+            'title'         => __('Header type', 'life_in_balance'),
             'priority'      => 10,
-            'panel'         => 'sydney_header_panel', 
-            'description'   => __('You can select your header type from here. After that, continue below to the next two tabs (Header Slider and Header Image) and configure them.', 'sydney'),
+            'panel'         => 'life_in_balance_header_panel', 
+            'description'   => __('You can select your header type from here. After that, continue below to the next two tabs (Header Slider and Header Image) and configure them.', 'life_in_balance'),
         )
     );
     //Front page
@@ -140,21 +140,21 @@ function sydney_customize_register( $wp_customize ) {
         'front_header_type',
         array(
             'default'           => 'nothing',
-            'sanitize_callback' => 'sydney_sanitize_layout',
+            'sanitize_callback' => 'life_in_balance_sanitize_layout',
         )
     );
     $wp_customize->add_control(
         'front_header_type',
         array(
             'type'        => 'radio',
-            'label'       => __('Front page header type', 'sydney'),
-            'section'     => 'sydney_header_type',
-            'description' => __('Select the header type for your front page', 'sydney'),
+            'label'       => __('Front page header type', 'life_in_balance'),
+            'section'     => 'life_in_balance_header_type',
+            'description' => __('Select the header type for your front page', 'life_in_balance'),
             'choices' => array(
-                'slider'    => __('Full screen slider', 'sydney'),
-                'image'     => __('Image', 'sydney'),
-                'core-video'=> __('Video', 'sydney'),
-                'nothing'   => __('No header (only menu)', 'sydney')
+                'slider'    => __('Full screen slider', 'life_in_balance'),
+                'image'     => __('Image', 'life_in_balance'),
+                'core-video'=> __('Video', 'life_in_balance'),
+                'nothing'   => __('No header (only menu)', 'life_in_balance')
             ),
         )
     );
@@ -163,32 +163,32 @@ function sydney_customize_register( $wp_customize ) {
         'site_header_type',
         array(
             'default'           => 'nothing',
-            'sanitize_callback' => 'sydney_sanitize_layout',
+            'sanitize_callback' => 'life_in_balance_sanitize_layout',
         )
     );
     $wp_customize->add_control(
         'site_header_type',
         array(
             'type'        => 'radio',
-            'label'       => __('Site header type', 'sydney'),
-            'section'     => 'sydney_header_type',
-            'description' => __('Select the header type for all pages except the front page', 'sydney'),
+            'label'       => __('Site header type', 'life_in_balance'),
+            'section'     => 'life_in_balance_header_type',
+            'description' => __('Select the header type for all pages except the front page', 'life_in_balance'),
             'choices' => array(
-                'slider'    => __('Full screen slider', 'sydney'),
-                'image'     => __('Image', 'sydney'),
-                'core-video'=> __('Video', 'sydney'),
-                'nothing'   => __('No header (only menu)', 'sydney')
+                'slider'    => __('Full screen slider', 'life_in_balance'),
+                'image'     => __('Image', 'life_in_balance'),
+                'core-video'=> __('Video', 'life_in_balance'),
+                'nothing'   => __('No header (only menu)', 'life_in_balance')
             ),
         )
     );    
     //___Slider___//
     $wp_customize->add_section(
-        'sydney_slider',
+        'life_in_balance_slider',
         array(
-            'title'         => __('Header Slider', 'sydney'),
-            'description'   => __('You can add up to 5 images in the slider. Make sure you select where to display your slider from the Header Type section found above. You can also add a Call to action button (scroll down to find the options)', 'sydney'),
+            'title'         => __('Header Slider', 'life_in_balance'),
+            'description'   => __('You can add up to 5 images in the slider. Make sure you select where to display your slider from the Header Type section found above. You can also add a Call to action button (scroll down to find the options)', 'life_in_balance'),
             'priority'      => 11,
-            'panel'         => 'sydney_header_panel',
+            'panel'         => 'life_in_balance_header_panel',
         )
     );
     //Mobile slider
@@ -196,19 +196,19 @@ function sydney_customize_register( $wp_customize ) {
         'mobile_slider',
         array(
             'default'           => 'responsive',
-            'sanitize_callback' => 'sydney_sanitize_mslider',
+            'sanitize_callback' => 'life_in_balance_sanitize_mslider',
         )
     );
     $wp_customize->add_control(
         'mobile_slider',
         array(
             'type'        => 'radio',
-            'label'       => __('Slider mobile behavior', 'sydney'),
-            'section'     => 'sydney_slider',
+            'label'       => __('Slider mobile behavior', 'life_in_balance'),
+            'section'     => 'life_in_balance_slider',
             'priority'    => 99,
             'choices' => array(
-                'fullscreen'    => __('Full screen', 'sydney'),
-                'responsive'    => __('Responsive', 'sydney'),
+                'fullscreen'    => __('Full screen', 'life_in_balance'),
+                'responsive'    => __('Responsive', 'life_in_balance'),
             ),
         )
     );    
@@ -216,46 +216,46 @@ function sydney_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'slider_speed',
         array(
-            'default' => __('4000','sydney'),
+            'default' => __('4000','life_in_balance'),
             'sanitize_callback' => 'absint',
         )
     );
     $wp_customize->add_control(
         'slider_speed',
         array(
-            'label' => __( 'Slider speed', 'sydney' ),
-            'section' => 'sydney_slider',
+            'label' => __( 'Slider speed', 'life_in_balance' ),
+            'section' => 'life_in_balance_slider',
             'type' => 'number',
-            'description'   => __('Slider speed in miliseconds. Use 0 to disable [default: 4000]', 'sydney'),       
+            'description'   => __('Slider speed in miliseconds. Use 0 to disable [default: 4000]', 'life_in_balance'),       
             'priority' => 7
         )
     );
     $wp_customize->add_setting(
         'textslider_slide',
         array(
-            'sanitize_callback' => 'sydney_sanitize_checkbox',
+            'sanitize_callback' => 'life_in_balance_sanitize_checkbox',
         )       
     );
     $wp_customize->add_control(
         'textslider_slide',
         array(
             'type'      => 'checkbox',
-            'label'     => __('Stop the text slider?', 'sydney'),
-            'section'   => 'sydney_slider',
+            'label'     => __('Stop the text slider?', 'life_in_balance'),
+            'section'   => 'life_in_balance_slider',
             'priority'  => 9,
         )
     );
     //Image 1
-    $wp_customize->add_setting('sydney_options[info]', array(
+    $wp_customize->add_setting('life_in_balance_options[info]', array(
             'type'              => 'info_control',
             'capability'        => 'edit_theme_options',
             'sanitize_callback' => 'esc_attr',            
         )
     );
-    $wp_customize->add_control( new Sydney_Info( $wp_customize, 's1', array(
-        'label' => __('First slide', 'sydney'),
-        'section' => 'sydney_slider',
-        'settings' => 'sydney_options[info]',
+    $wp_customize->add_control( new Life_In_Balance_Info( $wp_customize, 's1', array(
+        'label' => __('First slide', 'life_in_balance'),
+        'section' => 'life_in_balance_slider',
+        'settings' => 'life_in_balance_options[info]',
         'priority' => 10
         ) )
     );    
@@ -272,9 +272,9 @@ function sydney_customize_register( $wp_customize ) {
             $wp_customize,
             'slider_image_1',
             array(
-               'label'          => __( 'Upload your first image for the slider', 'sydney' ),
+               'label'          => __( 'Upload your first image for the slider', 'life_in_balance' ),
                'type'           => 'image',
-               'section'        => 'sydney_slider',
+               'section'        => 'life_in_balance_slider',
                'settings'       => 'slider_image_1',
                'priority'       => 11,
             )
@@ -284,16 +284,16 @@ function sydney_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'slider_title_1',
         array(
-            'default'           => __('Click the pencil icon to change this text','sydney'),
-            'sanitize_callback' => 'sydney_sanitize_text',
+            'default'           => __('Click the pencil icon to change this text','life_in_balance'),
+            'sanitize_callback' => 'life_in_balance_sanitize_text',
             'transport'         => 'postMessage'
         )
     );
     $wp_customize->add_control(
         'slider_title_1',
         array(
-            'label' => __( 'Title for the first slide', 'sydney' ),
-            'section' => 'sydney_slider',
+            'label' => __( 'Title for the first slide', 'life_in_balance' ),
+            'section' => 'life_in_balance_slider',
             'type' => 'text',
             'priority' => 12
         )
@@ -302,31 +302,31 @@ function sydney_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'slider_subtitle_1',
         array(
-            'default' => __('or go to the Customizer','sydney'),
-            'sanitize_callback' => 'sydney_sanitize_text',
+            'default' => __('or go to the Customizer','life_in_balance'),
+            'sanitize_callback' => 'life_in_balance_sanitize_text',
             'transport'         => 'postMessage'
         )
     );
     $wp_customize->add_control(
         'slider_subtitle_1',
         array(
-            'label' => __( 'Subtitle for the first slide', 'sydney' ),
-            'section' => 'sydney_slider',
+            'label' => __( 'Subtitle for the first slide', 'life_in_balance' ),
+            'section' => 'life_in_balance_slider',
             'type' => 'text',
             'priority' => 13
         )
     );           
     //Image 2
-    $wp_customize->add_setting('sydney_options[info]', array(
+    $wp_customize->add_setting('life_in_balance_options[info]', array(
             'type'              => 'info_control',
             'capability'        => 'edit_theme_options',
             'sanitize_callback' => 'esc_attr',            
         )
     );
-    $wp_customize->add_control( new Sydney_Info( $wp_customize, 's2', array(
-        'label' => __('Second slide', 'sydney'),
-        'section' => 'sydney_slider',
-        'settings' => 'sydney_options[info]',
+    $wp_customize->add_control( new Life_In_Balance_Info( $wp_customize, 's2', array(
+        'label' => __('Second slide', 'life_in_balance'),
+        'section' => 'life_in_balance_slider',
+        'settings' => 'life_in_balance_options[info]',
         'priority' => 14
         ) )
     );    
@@ -343,9 +343,9 @@ function sydney_customize_register( $wp_customize ) {
             $wp_customize,
             'slider_image_2',
             array(
-               'label'          => __( 'Upload your second image for the slider', 'sydney' ),
+               'label'          => __( 'Upload your second image for the slider', 'life_in_balance' ),
                'type'           => 'image',
-               'section'        => 'sydney_slider',
+               'section'        => 'life_in_balance_slider',
                'settings'       => 'slider_image_2',
                'priority'       => 15,
             )
@@ -356,15 +356,15 @@ function sydney_customize_register( $wp_customize ) {
         'slider_title_2',
         array(
             'default' => '',
-            'sanitize_callback' => 'sydney_sanitize_text',
+            'sanitize_callback' => 'life_in_balance_sanitize_text',
             'transport'         => 'postMessage'            
         )
     );
     $wp_customize->add_control(
         'slider_title_2',
         array(
-            'label' => __( 'Title for the second slide', 'sydney' ),
-            'section' => 'sydney_slider',
+            'label' => __( 'Title for the second slide', 'life_in_balance' ),
+            'section' => 'life_in_balance_slider',
             'type' => 'text',
             'priority' => 16
         )
@@ -374,30 +374,30 @@ function sydney_customize_register( $wp_customize ) {
         'slider_subtitle_2',
         array(
             'default' => '',
-            'sanitize_callback' => 'sydney_sanitize_text',
+            'sanitize_callback' => 'life_in_balance_sanitize_text',
             'transport'         => 'postMessage'            
         )
     );
     $wp_customize->add_control(
         'slider_subtitle_2',
         array(
-            'label' => __( 'Subtitle for the second slide', 'sydney' ),
-            'section' => 'sydney_slider',
+            'label' => __( 'Subtitle for the second slide', 'life_in_balance' ),
+            'section' => 'life_in_balance_slider',
             'type' => 'text',
             'priority' => 17
         )
     );    
     //Image 3
-    $wp_customize->add_setting('sydney_options[info]', array(
+    $wp_customize->add_setting('life_in_balance_options[info]', array(
             'type'              => 'info_control',
             'capability'        => 'edit_theme_options',
             'sanitize_callback' => 'esc_attr',            
         )
     );
-    $wp_customize->add_control( new Sydney_Info( $wp_customize, 's3', array(
-        'label' => __('Third slide', 'sydney'),
-        'section' => 'sydney_slider',
-        'settings' => 'sydney_options[info]',
+    $wp_customize->add_control( new Life_In_Balance_Info( $wp_customize, 's3', array(
+        'label' => __('Third slide', 'life_in_balance'),
+        'section' => 'life_in_balance_slider',
+        'settings' => 'life_in_balance_options[info]',
         'priority' => 18
         ) )
     );    
@@ -414,9 +414,9 @@ function sydney_customize_register( $wp_customize ) {
             $wp_customize,
             'slider_image_3',
             array(
-               'label'          => __( 'Upload your third image for the slider', 'sydney' ),
+               'label'          => __( 'Upload your third image for the slider', 'life_in_balance' ),
                'type'           => 'image',
-               'section'        => 'sydney_slider',
+               'section'        => 'life_in_balance_slider',
                'settings'       => 'slider_image_3',
                'priority'       => 19,
             )
@@ -427,15 +427,15 @@ function sydney_customize_register( $wp_customize ) {
         'slider_title_3',
         array(
             'default' => '',
-            'sanitize_callback' => 'sydney_sanitize_text',
+            'sanitize_callback' => 'life_in_balance_sanitize_text',
             'transport'         => 'postMessage'            
         )
     );
     $wp_customize->add_control(
         'slider_title_3',
         array(
-            'label' => __( 'Title for the third slide', 'sydney' ),
-            'section' => 'sydney_slider',
+            'label' => __( 'Title for the third slide', 'life_in_balance' ),
+            'section' => 'life_in_balance_slider',
             'type' => 'text',
             'priority' => 20
         )
@@ -445,30 +445,30 @@ function sydney_customize_register( $wp_customize ) {
         'slider_subtitle_3',
         array(
             'default' => '',
-            'sanitize_callback' => 'sydney_sanitize_text',
+            'sanitize_callback' => 'life_in_balance_sanitize_text',
             'transport'         => 'postMessage'            
         )
     );
     $wp_customize->add_control(
         'slider_subtitle_3',
         array(
-            'label' => __( 'Subtitle for the third slide', 'sydney' ),
-            'section' => 'sydney_slider',
+            'label' => __( 'Subtitle for the third slide', 'life_in_balance' ),
+            'section' => 'life_in_balance_slider',
             'type' => 'text',
             'priority' => 21
         )
     );            
     //Image 4
-    $wp_customize->add_setting('sydney_options[info]', array(
+    $wp_customize->add_setting('life_in_balance_options[info]', array(
             'type'              => 'info_control',
             'capability'        => 'edit_theme_options',
             'sanitize_callback' => 'esc_attr',            
         )
     );
-    $wp_customize->add_control( new Sydney_Info( $wp_customize, 's4', array(
-        'label' => __('Fourth slide', 'sydney'),
-        'section' => 'sydney_slider',
-        'settings' => 'sydney_options[info]',
+    $wp_customize->add_control( new Life_In_Balance_Info( $wp_customize, 's4', array(
+        'label' => __('Fourth slide', 'life_in_balance'),
+        'section' => 'life_in_balance_slider',
+        'settings' => 'life_in_balance_options[info]',
         'priority' => 22
         ) )
     );    
@@ -485,9 +485,9 @@ function sydney_customize_register( $wp_customize ) {
             $wp_customize,
             'slider_image_4',
             array(
-               'label'          => __( 'Upload your fourth image for the slider', 'sydney' ),
+               'label'          => __( 'Upload your fourth image for the slider', 'life_in_balance' ),
                'type'           => 'image',
-               'section'        => 'sydney_slider',
+               'section'        => 'life_in_balance_slider',
                'settings'       => 'slider_image_4',
                'priority'       => 23,
             )
@@ -498,15 +498,15 @@ function sydney_customize_register( $wp_customize ) {
         'slider_title_4',
         array(
             'default' => '',
-            'sanitize_callback' => 'sydney_sanitize_text',
+            'sanitize_callback' => 'life_in_balance_sanitize_text',
             'transport'         => 'postMessage'            
         )
     );
     $wp_customize->add_control(
         'slider_title_4',
         array(
-            'label' => __( 'Title for the fourth slide', 'sydney' ),
-            'section' => 'sydney_slider',
+            'label' => __( 'Title for the fourth slide', 'life_in_balance' ),
+            'section' => 'life_in_balance_slider',
             'type' => 'text',
             'priority' => 24
         )
@@ -516,30 +516,30 @@ function sydney_customize_register( $wp_customize ) {
         'slider_subtitle_4',
         array(
             'default' => '',
-            'sanitize_callback' => 'sydney_sanitize_text',
+            'sanitize_callback' => 'life_in_balance_sanitize_text',
             'transport'         => 'postMessage'            
         )
     );
     $wp_customize->add_control(
         'slider_subtitle_4',
         array(
-            'label' => __( 'Subtitle for the fourth slide', 'sydney' ),
-            'section' => 'sydney_slider',
+            'label' => __( 'Subtitle for the fourth slide', 'life_in_balance' ),
+            'section' => 'life_in_balance_slider',
             'type' => 'text',
             'priority' => 25
         )
     );    
     //Image 5
-    $wp_customize->add_setting('sydney_options[info]', array(
+    $wp_customize->add_setting('life_in_balance_options[info]', array(
             'type'              => 'info_control',
             'capability'        => 'edit_theme_options',
             'sanitize_callback' => 'esc_attr',            
         )
     );
-    $wp_customize->add_control( new Sydney_Info( $wp_customize, 's5', array(
-        'label' => __('Fifth slide', 'sydney'),
-        'section' => 'sydney_slider',
-        'settings' => 'sydney_options[info]',
+    $wp_customize->add_control( new Life_In_Balance_Info( $wp_customize, 's5', array(
+        'label' => __('Fifth slide', 'life_in_balance'),
+        'section' => 'life_in_balance_slider',
+        'settings' => 'life_in_balance_options[info]',
         'priority' => 26
         ) )
     );    
@@ -556,9 +556,9 @@ function sydney_customize_register( $wp_customize ) {
             $wp_customize,
             'slider_image_5',
             array(
-               'label'          => __( 'Upload your fifth image for the slider', 'sydney' ),
+               'label'          => __( 'Upload your fifth image for the slider', 'life_in_balance' ),
                'type'           => 'image',
-               'section'        => 'sydney_slider',
+               'section'        => 'life_in_balance_slider',
                'settings'       => 'slider_image_5',
                'priority'       => 27,
             )
@@ -569,15 +569,15 @@ function sydney_customize_register( $wp_customize ) {
         'slider_title_5',
         array(
             'default'           => '',
-            'sanitize_callback' => 'sydney_sanitize_text',
+            'sanitize_callback' => 'life_in_balance_sanitize_text',
             'transport'         => 'postMessage'            
         )
     );
     $wp_customize->add_control(
         'slider_title_5',
         array(
-            'label' => __( 'Title for the fifth slide', 'sydney' ),
-            'section' => 'sydney_slider',
+            'label' => __( 'Title for the fifth slide', 'life_in_balance' ),
+            'section' => 'life_in_balance_slider',
             'type' => 'text',
             'priority' => 28
         )
@@ -587,30 +587,30 @@ function sydney_customize_register( $wp_customize ) {
         'slider_subtitle_5',
         array(
             'default' => '',
-            'sanitize_callback' => 'sydney_sanitize_text',
+            'sanitize_callback' => 'life_in_balance_sanitize_text',
             'transport'         => 'postMessage'            
         )
     );
     $wp_customize->add_control(
         'slider_subtitle_5',
         array(
-            'label' => __( 'Subtitle for the fifth slide', 'sydney' ),
-            'section' => 'sydney_slider',
+            'label' => __( 'Subtitle for the fifth slide', 'life_in_balance' ),
+            'section' => 'life_in_balance_slider',
             'type' => 'text',
             'priority' => 29
         )
     );
     //Header button
-    $wp_customize->add_setting('sydney_options[info]', array(
+    $wp_customize->add_setting('life_in_balance_options[info]', array(
             'type'              => 'info_control',
             'capability'        => 'edit_theme_options',
             'sanitize_callback' => 'esc_attr',            
         )
     );
-    $wp_customize->add_control( new Sydney_Info( $wp_customize, 'hbutton', array(
-        'label' => __('Call to action button', 'sydney'),
-        'section' => 'sydney_slider',
-        'settings' => 'sydney_options[info]',
+    $wp_customize->add_control( new Life_In_Balance_Info( $wp_customize, 'hbutton', array(
+        'label' => __('Call to action button', 'life_in_balance'),
+        'section' => 'life_in_balance_slider',
+        'settings' => 'life_in_balance_options[info]',
         'priority' => 30
         ) )
     );     
@@ -625,8 +625,8 @@ function sydney_customize_register( $wp_customize ) {
     $wp_customize->add_control(
         'slider_button_url',
         array(
-            'label' => __( 'URL for your call to action button', 'sydney' ),
-            'section' => 'sydney_slider',
+            'label' => __( 'URL for your call to action button', 'life_in_balance' ),
+            'section' => 'life_in_balance_slider',
             'type' => 'text',
             'priority' => 31
         )
@@ -634,27 +634,27 @@ function sydney_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'slider_button_text',
         array(
-            'default' => __('Click to begin','sydney'),
-            'sanitize_callback' => 'sydney_sanitize_text',
+            'default' => __('Click to begin','life_in_balance'),
+            'sanitize_callback' => 'life_in_balance_sanitize_text',
             'transport'         => 'postMessage'            
         )
     );
     $wp_customize->add_control(
         'slider_button_text',
         array(
-            'label' => __( 'Text for your call to action button', 'sydney' ),
-            'section' => 'sydney_slider',
+            'label' => __( 'Text for your call to action button', 'life_in_balance' ),
+            'section' => 'life_in_balance_slider',
             'type' => 'text',
             'priority' => 32
         )
     );         
     //___Menu style___//
     $wp_customize->add_section(
-        'sydney_menu_style',
+        'life_in_balance_menu_style',
         array(
-            'title'         => __('Menu style', 'sydney'),
+            'title'         => __('Menu style', 'life_in_balance'),
             'priority'      => 15,
-            'panel'         => 'sydney_header_panel', 
+            'panel'         => 'life_in_balance_header_panel', 
         )
     );
     //Sticky menu
@@ -662,7 +662,7 @@ function sydney_customize_register( $wp_customize ) {
         'sticky_menu',
         array(
             'default'           => 'sticky',
-            'sanitize_callback' => 'sydney_sanitize_sticky',
+            'sanitize_callback' => 'life_in_balance_sanitize_sticky',
         )
     );
     $wp_customize->add_control(
@@ -670,11 +670,11 @@ function sydney_customize_register( $wp_customize ) {
         array(
             'type' => 'radio',
             'priority'    => 10,
-            'label' => __('Sticky menu', 'sydney'),
-            'section' => 'sydney_menu_style',
+            'label' => __('Sticky menu', 'life_in_balance'),
+            'section' => 'life_in_balance_menu_style',
             'choices' => array(
-                'sticky'   => __('Sticky', 'sydney'),
-                'static'   => __('Static', 'sydney'),
+                'sticky'   => __('Sticky', 'life_in_balance'),
+                'static'   => __('Static', 'life_in_balance'),
             ),
         )
     );
@@ -683,7 +683,7 @@ function sydney_customize_register( $wp_customize ) {
         'menu_style',
         array(
             'default'           => 'inline',
-            'sanitize_callback' => 'sydney_sanitize_menu_style',
+            'sanitize_callback' => 'life_in_balance_sanitize_menu_style',
         )
     );
     $wp_customize->add_control(
@@ -691,11 +691,11 @@ function sydney_customize_register( $wp_customize ) {
         array(
             'type'      => 'radio',
             'priority'  => 11,
-            'label'     => __('Menu style', 'sydney'),
-            'section'   => 'sydney_menu_style',
+            'label'     => __('Menu style', 'life_in_balance'),
+            'section'   => 'life_in_balance_menu_style',
             'choices'   => array(
-                'inline'     => __('Inline', 'sydney'),
-                'centered'   => __('Centered (menu and site logo)', 'sydney'),
+                'inline'     => __('Inline', 'life_in_balance'),
+                'centered'   => __('Centered (menu and site logo)', 'life_in_balance'),
             ),
         )
     );
@@ -704,7 +704,7 @@ function sydney_customize_register( $wp_customize ) {
         'header_bg_size',
         array(
             'default'           => 'cover',
-            'sanitize_callback' => 'sydney_sanitize_bg_size',
+            'sanitize_callback' => 'life_in_balance_sanitize_bg_size',
         )
     );
     $wp_customize->add_control(
@@ -712,11 +712,11 @@ function sydney_customize_register( $wp_customize ) {
         array(
             'type' => 'radio',
             'priority'    => 10,
-            'label' => __('Header background size', 'sydney'),
+            'label' => __('Header background size', 'life_in_balance'),
             'section' => 'header_image',
             'choices' => array(
-                'cover'     => __('Cover', 'sydney'),
-                'contain'   => __('Contain', 'sydney'),
+                'cover'     => __('Cover', 'life_in_balance'),
+                'contain'   => __('Contain', 'life_in_balance'),
             ),
         )
     );
@@ -732,7 +732,7 @@ function sydney_customize_register( $wp_customize ) {
         'type'        => 'number',
         'priority'    => 11,
         'section'     => 'header_image',
-        'label'       => __('Header height [default: 300px]', 'sydney'),
+        'label'       => __('Header height [default: 300px]', 'life_in_balance'),
         'input_attrs' => array(
             'min'   => 250,
             'max'   => 600,
@@ -743,14 +743,14 @@ function sydney_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'hide_overlay',
         array(
-            'sanitize_callback' => 'sydney_sanitize_checkbox',
+            'sanitize_callback' => 'life_in_balance_sanitize_checkbox',
         )       
     );
     $wp_customize->add_control(
         'hide_overlay',
         array(
             'type'      => 'checkbox',
-            'label'     => __('Disable the overlay?', 'sydney'),
+            'label'     => __('Disable the overlay?', 'life_in_balance'),
             'section'   => 'header_image',
             'priority'  => 12,
         )
@@ -768,7 +768,7 @@ function sydney_customize_register( $wp_customize ) {
             $wp_customize,
             'site_logo',
             array(
-               'label'          => __( 'Upload your logo', 'sydney' ),
+               'label'          => __( 'Upload your logo', 'life_in_balance' ),
                'type'           => 'image',
                'section'        => 'title_tagline',
                'priority'       => 12,
@@ -780,21 +780,21 @@ function sydney_customize_register( $wp_customize ) {
     $wp_customize->add_section(
         'blog_options',
         array(
-            'title' => __('Blog options', 'sydney'),
+            'title' => __('Blog options', 'life_in_balance'),
             'priority' => 13,
         )
     );  
     // Blog layout
-    $wp_customize->add_setting('sydney_options[info]', array(
+    $wp_customize->add_setting('life_in_balance_options[info]', array(
             'type'              => 'info_control',
             'capability'        => 'edit_theme_options',
             'sanitize_callback' => 'esc_attr',            
         )
     );
-    $wp_customize->add_control( new Sydney_Info( $wp_customize, 'layout', array(
-        'label' => __('Layout', 'sydney'),
+    $wp_customize->add_control( new Life_In_Balance_Info( $wp_customize, 'layout', array(
+        'label' => __('Layout', 'life_in_balance'),
         'section' => 'blog_options',
-        'settings' => 'sydney_options[info]',
+        'settings' => 'life_in_balance_options[info]',
         'priority' => 10
         ) )
     );    
@@ -802,22 +802,22 @@ function sydney_customize_register( $wp_customize ) {
         'blog_layout',
         array(
             'default'           => 'classic-alt',
-            'sanitize_callback' => 'sydney_sanitize_blog',
+            'sanitize_callback' => 'life_in_balance_sanitize_blog',
         )
     );
     $wp_customize->add_control(
         'blog_layout',
         array(
             'type'      => 'radio',
-            'label'     => __('Blog layout', 'sydney'),
+            'label'     => __('Blog layout', 'life_in_balance'),
             'section'   => 'blog_options',
             'priority'  => 11,
             'choices'   => array(
-                'classic'           => __( 'Classic', 'sydney' ),
-                'classic-alt'       => __( 'Classic (alternative)', 'sydney' ),
-                'modern'            => __( 'Modern', 'sydney' ),
-                'fullwidth'         => __( 'Full width (no sidebar)', 'sydney' ),
-                'masonry-layout'    => __( 'Masonry (grid style)', 'sydney' )
+                'classic'           => __( 'Classic', 'life_in_balance' ),
+                'classic-alt'       => __( 'Classic (alternative)', 'life_in_balance' ),
+                'modern'            => __( 'Modern', 'life_in_balance' ),
+                'fullwidth'         => __( 'Full width (no sidebar)', 'life_in_balance' ),
+                'masonry-layout'    => __( 'Masonry (grid style)', 'life_in_balance' )
             ),
         )
     ); 
@@ -825,29 +825,29 @@ function sydney_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'fullwidth_single',
         array(
-            'sanitize_callback' => 'sydney_sanitize_checkbox',
+            'sanitize_callback' => 'life_in_balance_sanitize_checkbox',
         )       
     );
     $wp_customize->add_control(
         'fullwidth_single',
         array(
             'type'      => 'checkbox',
-            'label'     => __('Full width single posts?', 'sydney'),
+            'label'     => __('Full width single posts?', 'life_in_balance'),
             'section'   => 'blog_options',
             'priority'  => 12,
         )
     );
     //Content/excerpt
-    $wp_customize->add_setting('sydney_options[info]', array(
+    $wp_customize->add_setting('life_in_balance_options[info]', array(
             'type'              => 'info_control',
             'capability'        => 'edit_theme_options',
             'sanitize_callback' => 'esc_attr',            
         )
     );
-    $wp_customize->add_control( new Sydney_Info( $wp_customize, 'content', array(
-        'label' => __('Content/excerpt', 'sydney'),
+    $wp_customize->add_control( new Life_In_Balance_Info( $wp_customize, 'content', array(
+        'label' => __('Content/excerpt', 'life_in_balance'),
         'section' => 'blog_options',
-        'settings' => 'sydney_options[info]',
+        'settings' => 'life_in_balance_options[info]',
         'priority' => 13
         ) )
     );          
@@ -855,7 +855,7 @@ function sydney_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
       'full_content_home',
       array(
-        'sanitize_callback' => 'sydney_sanitize_checkbox',
+        'sanitize_callback' => 'life_in_balance_sanitize_checkbox',
         'default' => 0,     
       )   
     );
@@ -863,7 +863,7 @@ function sydney_customize_register( $wp_customize ) {
         'full_content_home',
         array(
             'type' => 'checkbox',
-            'label' => __('Check this box to display the full content of your posts on the home page.', 'sydney'),
+            'label' => __('Check this box to display the full content of your posts on the home page.', 'life_in_balance'),
             'section' => 'blog_options',
             'priority' => 14,
         )
@@ -871,7 +871,7 @@ function sydney_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
       'full_content_archives',
       array(
-        'sanitize_callback' => 'sydney_sanitize_checkbox',
+        'sanitize_callback' => 'life_in_balance_sanitize_checkbox',
         'default' => 0,     
       )   
     );
@@ -879,7 +879,7 @@ function sydney_customize_register( $wp_customize ) {
         'full_content_archives',
         array(
             'type' => 'checkbox',
-            'label' => __('Check this box to display the full content of your posts on all archives.', 'sydney'),
+            'label' => __('Check this box to display the full content of your posts on all archives.', 'life_in_balance'),
             'section' => 'blog_options',
             'priority' => 15,
         )
@@ -896,8 +896,8 @@ function sydney_customize_register( $wp_customize ) {
         'type'        => 'number',
         'priority'    => 16,
         'section'     => 'blog_options',
-        'label'       => __('Excerpt length', 'sydney'),
-        'description' => __('Choose your excerpt length. Default: 55 words', 'sydney'),
+        'label'       => __('Excerpt length', 'life_in_balance'),
+        'description' => __('Choose your excerpt length. Default: 55 words', 'life_in_balance'),
         'input_attrs' => array(
             'min'   => 10,
             'max'   => 200,
@@ -905,16 +905,16 @@ function sydney_customize_register( $wp_customize ) {
         ),
     ) );
     //Meta
-    $wp_customize->add_setting('sydney_options[info]', array(
+    $wp_customize->add_setting('life_in_balance_options[info]', array(
             'type'              => 'info_control',
             'capability'        => 'edit_theme_options',
             'sanitize_callback' => 'esc_attr',            
         )
     );
-    $wp_customize->add_control( new Sydney_Info( $wp_customize, 'meta', array(
-        'label' => __('Meta', 'sydney'),
+    $wp_customize->add_control( new Life_In_Balance_Info( $wp_customize, 'meta', array(
+        'label' => __('Meta', 'life_in_balance'),
         'section' => 'blog_options',
-        'settings' => 'sydney_options[info]',
+        'settings' => 'life_in_balance_options[info]',
         'priority' => 17
         ) )
     ); 
@@ -922,7 +922,7 @@ function sydney_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
       'hide_meta_index',
       array(
-        'sanitize_callback' => 'sydney_sanitize_checkbox',
+        'sanitize_callback' => 'life_in_balance_sanitize_checkbox',
         'default' => 0,     
       )   
     );
@@ -930,7 +930,7 @@ function sydney_customize_register( $wp_customize ) {
       'hide_meta_index',
       array(
         'type' => 'checkbox',
-        'label' => __('Hide post meta on index, archives?', 'sydney'),
+        'label' => __('Hide post meta on index, archives?', 'life_in_balance'),
         'section' => 'blog_options',
         'priority' => 18,
       )
@@ -939,7 +939,7 @@ function sydney_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
       'hide_meta_single',
       array(
-        'sanitize_callback' => 'sydney_sanitize_checkbox',
+        'sanitize_callback' => 'life_in_balance_sanitize_checkbox',
         'default' => 0,     
       )   
     );
@@ -947,22 +947,22 @@ function sydney_customize_register( $wp_customize ) {
       'hide_meta_single',
       array(
         'type' => 'checkbox',
-        'label' => __('Hide post meta on singles?', 'sydney'),
+        'label' => __('Hide post meta on singles?', 'life_in_balance'),
         'section' => 'blog_options',
         'priority' => 19,
       )
     );
     //Featured images
-    $wp_customize->add_setting('sydney_options[info]', array(
+    $wp_customize->add_setting('life_in_balance_options[info]', array(
             'type'              => 'info_control',
             'capability'        => 'edit_theme_options',
             'sanitize_callback' => 'esc_attr',            
         )
     );
-    $wp_customize->add_control( new Sydney_Info( $wp_customize, 'images', array(
-        'label' => __('Featured images', 'sydney'),
+    $wp_customize->add_control( new Life_In_Balance_Info( $wp_customize, 'images', array(
+        'label' => __('Featured images', 'life_in_balance'),
         'section' => 'blog_options',
-        'settings' => 'sydney_options[info]',
+        'settings' => 'life_in_balance_options[info]',
         'priority' => 21
         ) )
     );     
@@ -970,14 +970,14 @@ function sydney_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'index_feat_image',
         array(
-            'sanitize_callback' => 'sydney_sanitize_checkbox',
+            'sanitize_callback' => 'life_in_balance_sanitize_checkbox',
         )       
     );
     $wp_customize->add_control(
         'index_feat_image',
         array(
             'type' => 'checkbox',
-            'label' => __('Check this box to hide featured images on index, archives etc.', 'sydney'),
+            'label' => __('Check this box to hide featured images on index, archives etc.', 'life_in_balance'),
             'section' => 'blog_options',
             'priority' => 22,
         )
@@ -986,14 +986,14 @@ function sydney_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'post_feat_image',
         array(
-            'sanitize_callback' => 'sydney_sanitize_checkbox',
+            'sanitize_callback' => 'life_in_balance_sanitize_checkbox',
         )       
     );
     $wp_customize->add_control(
         'post_feat_image',
         array(
             'type' => 'checkbox',
-            'label' => __('Check this box to hide featured images on single posts', 'sydney'),
+            'label' => __('Check this box to hide featured images on single posts', 'life_in_balance'),
             'section' => 'blog_options',
             'priority' => 23,
         )
@@ -1002,7 +1002,7 @@ function sydney_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'page_feat_image',
         array(
-            'sanitize_callback' => 'sydney_sanitize_checkbox',
+            'sanitize_callback' => 'life_in_balance_sanitize_checkbox',
             'default'           => 1,
         )       
     );
@@ -1010,7 +1010,7 @@ function sydney_customize_register( $wp_customize ) {
         'page_feat_image',
         array(
             'type' => 'checkbox',
-            'label' => __('Check this box to hide featured images on single pages', 'sydney'),
+            'label' => __('Check this box to hide featured images on single pages', 'life_in_balance'),
             'section' => 'blog_options',
             'priority' => 23,
         )
@@ -1020,9 +1020,9 @@ function sydney_customize_register( $wp_customize ) {
 
     //___Footer___//
     $wp_customize->add_section(
-        'sydney_footer',
+        'life_in_balance_footer',
         array(
-            'title'         => __('Footer', 'sydney'),
+            'title'         => __('Footer', 'life_in_balance'),
             'priority'      => 18,
         )
     );
@@ -1031,21 +1031,21 @@ function sydney_customize_register( $wp_customize ) {
         'footer_widget_areas',
         array(
             'default'           => '3',
-            'sanitize_callback' => 'sydney_sanitize_fw',
+            'sanitize_callback' => 'life_in_balance_sanitize_fw',
         )
     );
     $wp_customize->add_control(
         'footer_widget_areas',
         array(
             'type'        => 'radio',
-            'label'       => __('Footer widget area', 'sydney'),
-            'section'     => 'sydney_footer',
-            'description' => __('Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.', 'sydney'),
+            'label'       => __('Footer widget area', 'life_in_balance'),
+            'section'     => 'life_in_balance_footer',
+            'description' => __('Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.', 'life_in_balance'),
             'choices' => array(
-                '1'     => __('One', 'sydney'),
-                '2'     => __('Two', 'sydney'),
-                '3'     => __('Three', 'sydney'),
-                '4'     => __('Four', 'sydney')
+                '1'     => __('One', 'life_in_balance'),
+                '2'     => __('Two', 'life_in_balance'),
+                '3'     => __('Three', 'life_in_balance'),
+                '4'     => __('Four', 'life_in_balance')
             ),
         )
     );
@@ -1054,30 +1054,30 @@ function sydney_customize_register( $wp_customize ) {
 
     //___Fonts___//
     $wp_customize->add_section(
-        'sydney_fonts',
+        'life_in_balance_fonts',
         array(
-            'title' => __('Fonts', 'sydney'),
+            'title' => __('Fonts', 'life_in_balance'),
             'priority' => 15,
-            'description' => sprintf( __( 'You can check out previews of the Google Fonts %s', 'sydney' ), '<a target="_blank" href="https://fonts.google.com">' . __( 'here', 'sydney' ) . '</a>' ),
+            'description' => sprintf( __( 'You can check out previews of the Google Fonts %s', 'life_in_balance' ), '<a target="_blank" href="https://fonts.google.com">' . __( 'here', 'life_in_balance' ) . '</a>' ),
         )
     );
 
     require get_template_directory() . '/inc/controls/control-checkbox-multiple.php';
     require get_template_directory() . '/inc/controls/multiple-select/class-control-multiple-select.php';
-    $wp_customize->register_control_type( 'Sydney_Select2_Custom_Control' 	);
+    $wp_customize->register_control_type( 'Life_In_Balance_Select2_Custom_Control' 	);
 
 
     //Body fonts title
-    $wp_customize->add_setting('sydney_options[info]', array(
+    $wp_customize->add_setting('life_in_balance_options[info]', array(
             'type'              => 'info_control',
             'capability'        => 'edit_theme_options',
             'sanitize_callback' => 'esc_attr',            
         )
     );
-    $wp_customize->add_control( new Sydney_Info( $wp_customize, 'general_fonts', array(
-        'label' => __('General', 'sydney'),
-        'section' => 'sydney_fonts',
-        'settings' => 'sydney_options[info]',
+    $wp_customize->add_control( new Life_In_Balance_Info( $wp_customize, 'general_fonts', array(
+        'label' => __('General', 'life_in_balance'),
+        'section' => 'life_in_balance_fonts',
+        'settings' => 'life_in_balance_options[info]',
         'priority' => 10
         ) )
     );    
@@ -1086,15 +1086,15 @@ function sydney_customize_register( $wp_customize ) {
         'font_subsets',
         array(
             'default'   => array( 'latin' ),
-            'sanitize_callback' => 'sydney_sanitize_font_weights',
+            'sanitize_callback' => 'life_in_balance_sanitize_font_weights',
         )
     );
 
-    $wp_customize->add_control( new Sydney_Select2_Custom_Control( $wp_customize, 'font_subsets', array(
-        'label'     => __( 'Font subsets', 'sydney' ),
-        'section'   => 'sydney_fonts',
+    $wp_customize->add_control( new Life_In_Balance_Select2_Custom_Control( $wp_customize, 'font_subsets', array(
+        'label'     => __( 'Font subsets', 'life_in_balance' ),
+        'section'   => 'life_in_balance_fonts',
         'priority'  => 10,
-        'type'      => 'sydney-multiple-select',
+        'type'      => 'life_in_balance-multiple-select',
         'input_attrs' => array(
             'multiple' => true,
         ),        
@@ -1111,21 +1111,21 @@ function sydney_customize_register( $wp_customize ) {
     );   
 
     //Body fonts title
-    $wp_customize->add_setting('sydney_options[info]', array(
+    $wp_customize->add_setting('life_in_balance_options[info]', array(
             'type'              => 'info_control',
             'capability'        => 'edit_theme_options',
             'sanitize_callback' => 'esc_attr',            
         )
     );
-    $wp_customize->add_control( new Sydney_Info( $wp_customize, 'body_fonts', array(
-        'label' => __('Body fonts', 'sydney'),
-        'section' => 'sydney_fonts',
-        'settings' => 'sydney_options[info]',
+    $wp_customize->add_control( new Life_In_Balance_Info( $wp_customize, 'body_fonts', array(
+        'label' => __('Body fonts', 'life_in_balance'),
+        'section' => 'life_in_balance_fonts',
+        'settings' => 'life_in_balance_options[info]',
         'priority' => 10
         ) )
     );    
     //Body fonts
-    $fonts = sydney_get_google_fonts();
+    $fonts = life_in_balance_get_google_fonts();
     $fonts = array_combine( $fonts, $fonts );
 
     $wp_customize->add_setting(
@@ -1133,14 +1133,14 @@ function sydney_customize_register( $wp_customize ) {
         array(
             'default'           => 'Raleway',
             'transport'         => 'postMessage',
-            'sanitize_callback' => 'sydney_sanitize_text',
+            'sanitize_callback' => 'life_in_balance_sanitize_text',
         )
     );
 
-    $wp_customize->add_control( new Sydney_Select2_Custom_Control( $wp_customize, 'body_font', array(
-        'label'     => __( 'Font family', 'sydney' ),
-        'section'   => 'sydney_fonts',
-        'type'      => 'sydney-multiple-select',      
+    $wp_customize->add_control( new Life_In_Balance_Select2_Custom_Control( $wp_customize, 'body_font', array(
+        'label'     => __( 'Font family', 'life_in_balance' ),
+        'section'   => 'life_in_balance_fonts',
+        'type'      => 'life_in_balance-multiple-select',      
         'priority' => 12,
         'choices' => $fonts  
         ) )
@@ -1152,14 +1152,14 @@ function sydney_customize_register( $wp_customize ) {
         'body_font_weights',
         array(
             'default'           =>  array('400', '600'),
-            'sanitize_callback' => 'sydney_sanitize_font_weights',
+            'sanitize_callback' => 'life_in_balance_sanitize_font_weights',
         )
     );
 
-    $wp_customize->add_control( new Sydney_Select2_Custom_Control( $wp_customize, 'body_font_weights', array(
-        'label'         => __('Font weights', 'sydney'),
-        'description'   => sprintf( __( 'Please make sure your selected font weights are actually available for your font. You can check %s', 'sydney' ), '<a target="_blank" href="https://fonts.google.com">' . __( 'here', 'sydney' ) . '</a>' ),
-        'section' => 'sydney_fonts',
+    $wp_customize->add_control( new Life_In_Balance_Select2_Custom_Control( $wp_customize, 'body_font_weights', array(
+        'label'         => __('Font weights', 'life_in_balance'),
+        'description'   => sprintf( __( 'Please make sure your selected font weights are actually available for your font. You can check %s', 'life_in_balance' ), '<a target="_blank" href="https://fonts.google.com">' . __( 'here', 'life_in_balance' ) . '</a>' ),
+        'section' => 'life_in_balance_fonts',
         'priority' => 13,
         'input_attrs' => array(
             'multiple' => true,
@@ -1179,16 +1179,16 @@ function sydney_customize_register( $wp_customize ) {
     );   
     
     //Headings fonts title
-    $wp_customize->add_setting('sydney_options[info]', array(
+    $wp_customize->add_setting('life_in_balance_options[info]', array(
             'type'              => 'info_control',
             'capability'        => 'edit_theme_options',
             'sanitize_callback' => 'esc_attr',            
         )
     );
-    $wp_customize->add_control( new Sydney_Info( $wp_customize, 'headings_fonts', array(
-        'label' => __('Headings fonts', 'sydney'),
-        'section' => 'sydney_fonts',
-        'settings' => 'sydney_options[info]',
+    $wp_customize->add_control( new Life_In_Balance_Info( $wp_customize, 'headings_fonts', array(
+        'label' => __('Headings fonts', 'life_in_balance'),
+        'section' => 'life_in_balance_fonts',
+        'settings' => 'life_in_balance_options[info]',
         'priority' => 13
         ) )
     );      
@@ -1199,16 +1199,16 @@ function sydney_customize_register( $wp_customize ) {
         array(
             'default'           => 'Raleway',
             'transport'         => 'postMessage',
-            'sanitize_callback' => 'sydney_sanitize_text',
+            'sanitize_callback' => 'life_in_balance_sanitize_text',
         )
     );
 
-    $wp_customize->add_control( new Sydney_Select2_Custom_Control( $wp_customize, 'headings_font', array(
-        'label' => __( 'Font family', 'sydney' ),
-        'section' => 'sydney_fonts',
+    $wp_customize->add_control( new Life_In_Balance_Select2_Custom_Control( $wp_customize, 'headings_font', array(
+        'label' => __( 'Font family', 'life_in_balance' ),
+        'section' => 'life_in_balance_fonts',
         'type' => 'select',      
         'priority' => 14,
-        'type'      => 'sydney-multiple-select',      
+        'type'      => 'life_in_balance-multiple-select',      
         'choices' => $fonts  
         ) )
     );      
@@ -1217,14 +1217,14 @@ function sydney_customize_register( $wp_customize ) {
         'headings_font_weights',
         array(
             'default'           => array( '600' ),
-            'sanitize_callback' => 'sydney_sanitize_font_weights',
+            'sanitize_callback' => 'life_in_balance_sanitize_font_weights',
         )
     );
 
-    $wp_customize->add_control( new Sydney_Select2_Custom_Control( $wp_customize, 'headings_font_weights', array(
-        'label' => __('Font weights', 'sydney'),
-        'description'   => sprintf( __( 'Please make sure your selected font weights are actually available for your font. You can check %s', 'sydney' ), '<a target="_blank" href="https://fonts.google.com">' . __( 'here', 'sydney' ) . '</a>' ),
-        'section' => 'sydney_fonts',
+    $wp_customize->add_control( new Life_In_Balance_Select2_Custom_Control( $wp_customize, 'headings_font_weights', array(
+        'label' => __('Font weights', 'life_in_balance'),
+        'description'   => sprintf( __( 'Please make sure your selected font weights are actually available for your font. You can check %s', 'life_in_balance' ), '<a target="_blank" href="https://fonts.google.com">' . __( 'here', 'life_in_balance' ) . '</a>' ),
+        'section' => 'life_in_balance_fonts',
         'priority' => 14,
         'input_attrs' => array(
             'multiple' => true,
@@ -1244,16 +1244,16 @@ function sydney_customize_register( $wp_customize ) {
     );     
 
     //Font sizes title
-    $wp_customize->add_setting('sydney_options[info]', array(
+    $wp_customize->add_setting('life_in_balance_options[info]', array(
             'type'              => 'info_control',
             'capability'        => 'edit_theme_options',
             'sanitize_callback' => 'esc_attr',            
         )
     );
-    $wp_customize->add_control( new Sydney_Info( $wp_customize, 'font_sizes', array(
-        'label' => __('Font sizes', 'sydney'),
-        'section' => 'sydney_fonts',
-        'settings' => 'sydney_options[info]',
+    $wp_customize->add_control( new Life_In_Balance_Info( $wp_customize, 'font_sizes', array(
+        'label' => __('Font sizes', 'life_in_balance'),
+        'section' => 'life_in_balance_fonts',
+        'settings' => 'life_in_balance_options[info]',
         'priority' => 16
         ) )
     );
@@ -1268,8 +1268,8 @@ function sydney_customize_register( $wp_customize ) {
     $wp_customize->add_control( 'site_title_size', array(
         'type'        => 'number',
         'priority'    => 17,
-        'section'     => 'sydney_fonts',
-        'label'       => __('Site title', 'sydney'),
+        'section'     => 'life_in_balance_fonts',
+        'label'       => __('Site title', 'life_in_balance'),
         'input_attrs' => array(
             'min'   => 10,
             'max'   => 90,
@@ -1287,8 +1287,8 @@ function sydney_customize_register( $wp_customize ) {
     $wp_customize->add_control( 'site_desc_size', array(
         'type'        => 'number',
         'priority'    => 17,
-        'section'     => 'sydney_fonts',
-        'label'       => __('Site description', 'sydney'),
+        'section'     => 'life_in_balance_fonts',
+        'label'       => __('Site description', 'life_in_balance'),
         'input_attrs' => array(
             'min'   => 10,
             'max'   => 50,
@@ -1306,8 +1306,8 @@ function sydney_customize_register( $wp_customize ) {
     $wp_customize->add_control( 'menu_size', array(
         'type'        => 'number',
         'priority'    => 17,
-        'section'     => 'sydney_fonts',
-        'label'       => __('Menu items', 'sydney'),
+        'section'     => 'life_in_balance_fonts',
+        'label'       => __('Menu items', 'life_in_balance'),
         'input_attrs' => array(
             'min'   => 10,
             'max'   => 50,
@@ -1325,8 +1325,8 @@ function sydney_customize_register( $wp_customize ) {
     $wp_customize->add_control( 'h1_size', array(
         'type'        => 'number',
         'priority'    => 17,
-        'section'     => 'sydney_fonts',
-        'label'       => __('H1 font size', 'sydney'),
+        'section'     => 'life_in_balance_fonts',
+        'label'       => __('H1 font size', 'life_in_balance'),
         'input_attrs' => array(
             'min'   => 10,
             'max'   => 60,
@@ -1344,8 +1344,8 @@ function sydney_customize_register( $wp_customize ) {
     $wp_customize->add_control( 'h2_size', array(
         'type'        => 'number',
         'priority'    => 18,
-        'section'     => 'sydney_fonts',
-        'label'       => __('H2 font size', 'sydney'),
+        'section'     => 'life_in_balance_fonts',
+        'label'       => __('H2 font size', 'life_in_balance'),
         'input_attrs' => array(
             'min'   => 10,
             'max'   => 60,
@@ -1363,8 +1363,8 @@ function sydney_customize_register( $wp_customize ) {
     $wp_customize->add_control( 'h3_size', array(
         'type'        => 'number',
         'priority'    => 19,
-        'section'     => 'sydney_fonts',
-        'label'       => __('H3 font size', 'sydney'),
+        'section'     => 'life_in_balance_fonts',
+        'label'       => __('H3 font size', 'life_in_balance'),
         'input_attrs' => array(
             'min'   => 10,
             'max'   => 60,
@@ -1382,8 +1382,8 @@ function sydney_customize_register( $wp_customize ) {
     $wp_customize->add_control( 'h4_size', array(
         'type'        => 'number',
         'priority'    => 20,
-        'section'     => 'sydney_fonts',
-        'label'       => __('H4 font size', 'sydney'),
+        'section'     => 'life_in_balance_fonts',
+        'label'       => __('H4 font size', 'life_in_balance'),
         'input_attrs' => array(
             'min'   => 10,
             'max'   => 60,
@@ -1401,8 +1401,8 @@ function sydney_customize_register( $wp_customize ) {
     $wp_customize->add_control( 'h5_size', array(
         'type'        => 'number',
         'priority'    => 21,
-        'section'     => 'sydney_fonts',
-        'label'       => __('H5 font size', 'sydney'),
+        'section'     => 'life_in_balance_fonts',
+        'label'       => __('H5 font size', 'life_in_balance'),
         'input_attrs' => array(
             'min'   => 10,
             'max'   => 60,
@@ -1420,8 +1420,8 @@ function sydney_customize_register( $wp_customize ) {
     $wp_customize->add_control( 'h6_size', array(
         'type'        => 'number',
         'priority'    => 22,
-        'section'     => 'sydney_fonts',
-        'label'       => __('H6 font size', 'sydney'),
+        'section'     => 'life_in_balance_fonts',
+        'label'       => __('H6 font size', 'life_in_balance'),
         'input_attrs' => array(
             'min'   => 10,
             'max'   => 60,
@@ -1439,8 +1439,8 @@ function sydney_customize_register( $wp_customize ) {
     $wp_customize->add_control( 'body_size', array(
         'type'        => 'number',
         'priority'    => 23,
-        'section'     => 'sydney_fonts',
-        'label'       => __('Body font size', 'sydney'),
+        'section'     => 'life_in_balance_fonts',
+        'label'       => __('Body font size', 'life_in_balance'),
         'input_attrs' => array(
             'min'   => 10,
             'max'   => 24,
@@ -1458,8 +1458,8 @@ function sydney_customize_register( $wp_customize ) {
     $wp_customize->add_control( 'single_post_title_size', array(
         'type'        => 'number',
         'priority'    => 24,
-        'section'     => 'sydney_fonts',
-        'label'       => __('Single post title size', 'sydney'),
+        'section'     => 'life_in_balance_fonts',
+        'label'       => __('Single post title size', 'life_in_balance'),
         'input_attrs' => array(
             'min'   => 10,
             'max'   => 90,
@@ -1467,34 +1467,34 @@ function sydney_customize_register( $wp_customize ) {
         ),
     ) ); 
     //___Colors___//
-    $wp_customize->add_panel( 'sydney_colors_panel', array(
+    $wp_customize->add_panel( 'life_in_balance_colors_panel', array(
         'priority'       => 19,
         'capability'     => 'edit_theme_options',
         'theme_supports' => '',
-        'title'          => __('Colors', 'sydney'),
+        'title'          => __('Colors', 'life_in_balance'),
     ) );
     $wp_customize->add_section(
         'colors_header',
         array(
-            'title'         => __('Header', 'sydney'),
+            'title'         => __('Header', 'life_in_balance'),
             'priority'      => 11,
-            'panel'         => 'sydney_colors_panel',
+            'panel'         => 'life_in_balance_colors_panel',
         )
     );
     $wp_customize->add_section(
         'colors_sidebar',
         array(
-            'title'         => __('Sidebar', 'sydney'),
+            'title'         => __('Sidebar', 'life_in_balance'),
             'priority'      => 12,
-            'panel'         => 'sydney_colors_panel',
+            'panel'         => 'life_in_balance_colors_panel',
         )
     );
     $wp_customize->add_section(
         'colors_footer',
         array(
-            'title'         => __('Footer', 'sydney'),
+            'title'         => __('Footer', 'life_in_balance'),
             'priority'      => 13,
-            'panel'         => 'sydney_colors_panel',
+            'panel'         => 'life_in_balance_colors_panel',
         )
     );    
     $wp_customize->add_setting(
@@ -1510,7 +1510,7 @@ function sydney_customize_register( $wp_customize ) {
             $wp_customize,
             'primary_color',
             array(
-                'label'         => __('Primary color', 'sydney'),
+                'label'         => __('Primary color', 'life_in_balance'),
                 'section'       => 'colors',
                 'settings'      => 'primary_color',
                 'priority'      => 11
@@ -1530,7 +1530,7 @@ function sydney_customize_register( $wp_customize ) {
             $wp_customize,
             'menu_bg_color',
             array(
-                'label' => __('Menu background', 'sydney'),
+                'label' => __('Menu background', 'life_in_balance'),
                 'section' => 'colors_header',
                 'priority' => 12
             )
@@ -1550,7 +1550,7 @@ function sydney_customize_register( $wp_customize ) {
             $wp_customize,
             'site_title_color',
             array(
-                'label' => __('Site title', 'sydney'),
+                'label' => __('Site title', 'life_in_balance'),
                 'section' => 'colors_header',
                 'settings' => 'site_title_color',
                 'priority' => 13
@@ -1571,7 +1571,7 @@ function sydney_customize_register( $wp_customize ) {
             $wp_customize,
             'site_desc_color',
             array(
-                'label' => __('Site description', 'sydney'),
+                'label' => __('Site description', 'life_in_balance'),
                 'section' => 'colors_header',
                 'priority' => 14
             )
@@ -1591,7 +1591,7 @@ function sydney_customize_register( $wp_customize ) {
             $wp_customize,
             'top_items_color',
             array(
-                'label' => __('Top level menu items', 'sydney'),
+                'label' => __('Top level menu items', 'life_in_balance'),
                 'section' => 'colors_header',
                 'priority' => 15
             )
@@ -1610,7 +1610,7 @@ function sydney_customize_register( $wp_customize ) {
             $wp_customize,
         	'menu_items_hover',
             array(
-                'label' => __('Menu items hover', 'sydney'),
+                'label' => __('Menu items hover', 'life_in_balance'),
                 'section' => 'colors_header',
                 'priority' => 15
             )
@@ -1631,7 +1631,7 @@ function sydney_customize_register( $wp_customize ) {
             $wp_customize,
             'submenu_items_color',
             array(
-                'label' => __('Sub-menu items', 'sydney'),
+                'label' => __('Sub-menu items', 'life_in_balance'),
                 'section' => 'colors_header',
                 'priority' => 16
             )
@@ -1650,7 +1650,7 @@ function sydney_customize_register( $wp_customize ) {
             $wp_customize,
             'submenu_background',
             array(
-                'label' => __('Sub-menu background', 'sydney'),
+                'label' => __('Sub-menu background', 'life_in_balance'),
                 'section' => 'colors_header',
                 'priority' => 17
             )
@@ -1669,7 +1669,7 @@ function sydney_customize_register( $wp_customize ) {
             $wp_customize,
             'mobile_menu_color',
             array(
-                'label' => __('Mobile menu button', 'sydney'),
+                'label' => __('Mobile menu button', 'life_in_balance'),
                 'section' => 'colors_header',
                 'priority' => 17
             )
@@ -1689,7 +1689,7 @@ function sydney_customize_register( $wp_customize ) {
             $wp_customize,
             'slider_text',
             array(
-                'label' => __('Header slider text', 'sydney'),
+                'label' => __('Header slider text', 'life_in_balance'),
                 'section' => 'colors_header',
                 'priority' => 18
             )
@@ -1709,7 +1709,7 @@ function sydney_customize_register( $wp_customize ) {
             $wp_customize,
             'body_text_color',
             array(
-                'label' => __('Body text', 'sydney'),
+                'label' => __('Body text', 'life_in_balance'),
                 'section' => 'colors',
                 'priority' => 19
             )
@@ -1729,7 +1729,7 @@ function sydney_customize_register( $wp_customize ) {
             $wp_customize,
             'sidebar_background',
             array(
-                'label' => __('Sidebar background', 'sydney'),
+                'label' => __('Sidebar background', 'life_in_balance'),
                 'section' => 'colors_sidebar',
                 'priority' => 20
             )
@@ -1749,7 +1749,7 @@ function sydney_customize_register( $wp_customize ) {
             $wp_customize,
             'sidebar_color',
             array(
-                'label' => __('Sidebar color', 'sydney'),
+                'label' => __('Sidebar color', 'life_in_balance'),
                 'section' => 'colors_sidebar',
                 'priority' => 21
             )
@@ -1769,7 +1769,7 @@ function sydney_customize_register( $wp_customize ) {
             $wp_customize,
             'footer_widgets_background',
             array(
-                'label' => __('Footer widget area background', 'sydney'),
+                'label' => __('Footer widget area background', 'life_in_balance'),
                 'section' => 'colors_footer',
                 'priority' => 22
             )
@@ -1789,7 +1789,7 @@ function sydney_customize_register( $wp_customize ) {
             $wp_customize,
             'footer_widgets_color',
             array(
-                'label' => __('Footer widget area color', 'sydney'),
+                'label' => __('Footer widget area color', 'life_in_balance'),
                 'section' => 'colors_footer',
                 'priority' => 23
             )
@@ -1809,7 +1809,7 @@ function sydney_customize_register( $wp_customize ) {
             $wp_customize,
             'footer_background',
             array(
-                'label' => __('Footer background', 'sydney'),
+                'label' => __('Footer background', 'life_in_balance'),
                 'section' => 'colors_footer',
                 'priority' => 24
             )
@@ -1829,7 +1829,7 @@ function sydney_customize_register( $wp_customize ) {
             $wp_customize,
             'footer_color',
             array(
-                'label' => __('Footer color', 'sydney'),
+                'label' => __('Footer color', 'life_in_balance'),
                 'section' => 'colors_footer',
                 'priority' => 25
             )
@@ -1848,9 +1848,9 @@ function sydney_customize_register( $wp_customize ) {
             $wp_customize,
             'rows_overlay',
             array(
-                'label'         => __('Rows overlay', 'sydney'),
+                'label'         => __('Rows overlay', 'life_in_balance'),
                 'section'       => 'colors',
-                'description'   => __('[DEPRECATED] Please use the color option from Edit Row > Design > Overlay color', 'sydney'),
+                'description'   => __('[DEPRECATED] Please use the color option from Edit Row > Design > Overlay color', 'life_in_balance'),
                 'priority'      => 26
             )
         )
@@ -1859,39 +1859,39 @@ function sydney_customize_register( $wp_customize ) {
 
     //___Theme info___//
     $wp_customize->add_section(
-        'sydney_themeinfo',
+        'life_in_balance_themeinfo',
         array(
-            'title' => __('Theme info', 'sydney'),
+            'title' => __('Theme info', 'life_in_balance'),
             'priority' => 139,
-            'description' => '<p style="padding-bottom: 10px;border-bottom: 1px solid #d3d2d2">' . __('1. Documentation for Sydney can be found ', 'sydney') . '<a target="_blank" href="http://athemes.com/documentation/sydney/">here</a></p><p style="padding-bottom: 10px;border-bottom: 1px solid #d3d2d2">' . __('2. A full theme demo can be found ', 'sydney') . '<a target="_blank" href="http://demo.athemes.com/sydney/">here</a></p>',         
+            'description' => '<p style="padding-bottom: 10px;border-bottom: 1px solid #d3d2d2">' . __('1. Documentation for Life_In_Balance can be found ', 'life_in_balance') . '<a target="_blank" href="http://athemes.com/documentation/life_in_balance/">here</a></p><p style="padding-bottom: 10px;border-bottom: 1px solid #d3d2d2">' . __('2. A full theme demo can be found ', 'life_in_balance') . '<a target="_blank" href="http://demo.athemes.com/life_in_balance/">here</a></p>',         
         )
     );
-    $wp_customize->add_setting('sydney_theme_docs', array(
+    $wp_customize->add_setting('life_in_balance_theme_docs', array(
             'type'              => 'info_control',
             'capability'        => 'edit_theme_options',
             'sanitize_callback' => 'esc_attr',            
         )
     );
-    $wp_customize->add_control( new Sydney_Theme_Info( $wp_customize, 'documentation', array(
-        'section' => 'sydney_themeinfo',
-        'settings' => 'sydney_theme_docs',
+    $wp_customize->add_control( new Life_In_Balance_Theme_Info( $wp_customize, 'documentation', array(
+        'section' => 'life_in_balance_themeinfo',
+        'settings' => 'life_in_balance_theme_docs',
         'priority' => 10
         ) )
     );  
 
 }
-add_action( 'customize_register', 'sydney_customize_register' );
+add_action( 'customize_register', 'life_in_balance_customize_register' );
 
 /**
  * Sanitize
  */
 //Header type
-function sydney_sanitize_layout( $input ) {
+function life_in_balance_sanitize_layout( $input ) {
     $valid = array(
-        'slider'    => __('Full screen slider', 'sydney'),
-        'image'     => __('Image', 'sydney'),
-        'core-video'=> __('Video', 'sydney'),
-        'nothing'   => __('Nothing (only menu)', 'sydney')
+        'slider'    => __('Full screen slider', 'life_in_balance'),
+        'image'     => __('Image', 'life_in_balance'),
+        'core-video'=> __('Video', 'life_in_balance'),
+        'nothing'   => __('Nothing (only menu)', 'life_in_balance')
     );
  
     if ( array_key_exists( $input, $valid ) ) {
@@ -1901,14 +1901,14 @@ function sydney_sanitize_layout( $input ) {
     }
 }
 //Text
-function sydney_sanitize_text( $input ) {
+function life_in_balance_sanitize_text( $input ) {
     return wp_kses_post( force_balance_tags( $input ) );
 }
 //Background size
-function sydney_sanitize_bg_size( $input ) {
+function life_in_balance_sanitize_bg_size( $input ) {
     $valid = array(
-        'cover'     => __('Cover', 'sydney'),
-        'contain'   => __('Contain', 'sydney'),
+        'cover'     => __('Cover', 'life_in_balance'),
+        'contain'   => __('Contain', 'life_in_balance'),
     );
     if ( array_key_exists( $input, $valid ) ) {
         return $input;
@@ -1917,12 +1917,12 @@ function sydney_sanitize_bg_size( $input ) {
     }
 }
 //Footer widget areas
-function sydney_sanitize_fw( $input ) {
+function life_in_balance_sanitize_fw( $input ) {
     $valid = array(
-        '1'     => __('One', 'sydney'),
-        '2'     => __('Two', 'sydney'),
-        '3'     => __('Three', 'sydney'),
-        '4'     => __('Four', 'sydney')
+        '1'     => __('One', 'life_in_balance'),
+        '2'     => __('Two', 'life_in_balance'),
+        '3'     => __('Three', 'life_in_balance'),
+        '4'     => __('Four', 'life_in_balance')
     );
     if ( array_key_exists( $input, $valid ) ) {
         return $input;
@@ -1931,10 +1931,10 @@ function sydney_sanitize_fw( $input ) {
     }
 }
 //Sticky menu
-function sydney_sanitize_sticky( $input ) {
+function life_in_balance_sanitize_sticky( $input ) {
     $valid = array(
-        'sticky'     => __('Sticky', 'sydney'),
-        'static'   => __('Static', 'sydney'),
+        'sticky'     => __('Sticky', 'life_in_balance'),
+        'static'   => __('Static', 'life_in_balance'),
     );
     if ( array_key_exists( $input, $valid ) ) {
         return $input;
@@ -1943,13 +1943,13 @@ function sydney_sanitize_sticky( $input ) {
     }
 }
 //Blog Layout
-function sydney_sanitize_blog( $input ) {
+function life_in_balance_sanitize_blog( $input ) {
     $valid = array(
-        'classic'    => __( 'Classic', 'sydney' ),
-        'classic-alt'    => __( 'Classic (alternative)', 'sydney' ),
-        'modern'    => __( 'Modern', 'sydney' ),
-        'fullwidth'  => __( 'Full width (no sidebar)', 'sydney' ),
-        'masonry-layout'    => __( 'Masonry (grid style)', 'sydney' )
+        'classic'    => __( 'Classic', 'life_in_balance' ),
+        'classic-alt'    => __( 'Classic (alternative)', 'life_in_balance' ),
+        'modern'    => __( 'Modern', 'life_in_balance' ),
+        'fullwidth'  => __( 'Full width (no sidebar)', 'life_in_balance' ),
+        'masonry-layout'    => __( 'Masonry (grid style)', 'life_in_balance' )
 
     );
     if ( array_key_exists( $input, $valid ) ) {
@@ -1959,10 +1959,10 @@ function sydney_sanitize_blog( $input ) {
     }
 }
 //Mobile slider
-function sydney_sanitize_mslider( $input ) {
+function life_in_balance_sanitize_mslider( $input ) {
     $valid = array(
-        'fullscreen'    => __('Full screen', 'sydney'),
-        'responsive'    => __('Responsive', 'sydney'),
+        'fullscreen'    => __('Full screen', 'life_in_balance'),
+        'responsive'    => __('Responsive', 'life_in_balance'),
     );
     if ( array_key_exists( $input, $valid ) ) {
         return $input;
@@ -1971,10 +1971,10 @@ function sydney_sanitize_mslider( $input ) {
     }
 }
 //Menu style
-function sydney_sanitize_menu_style( $input ) {
+function life_in_balance_sanitize_menu_style( $input ) {
     $valid = array(
-        'inline'     => __('Inline', 'sydney'),
-        'centered'   => __('Centered (menu and site logo)', 'sydney'),
+        'inline'     => __('Inline', 'life_in_balance'),
+        'centered'   => __('Centered (menu and site logo)', 'life_in_balance'),
     );
     if ( array_key_exists( $input, $valid ) ) {
         return $input;
@@ -1983,7 +1983,7 @@ function sydney_sanitize_menu_style( $input ) {
     }
 }
 //Checkboxes
-function sydney_sanitize_checkbox( $input ) {
+function life_in_balance_sanitize_checkbox( $input ) {
     if ( $input == 1 ) {
         return 1;
     } else {
@@ -1991,7 +1991,7 @@ function sydney_sanitize_checkbox( $input ) {
     }
 }
 
-function sydney_sanitize_font_weights( $input ) {
+function life_in_balance_sanitize_font_weights( $input ) {
     if ( is_array( $input ) ) {
         return $input;
     }
@@ -2000,11 +2000,11 @@ function sydney_sanitize_font_weights( $input ) {
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function sydney_customize_preview_js() {
+function life_in_balance_customize_preview_js() {
     
-	wp_enqueue_script( 'sydney_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20200129', true );
+	wp_enqueue_script( 'life_in_balance_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20200129', true );
 }
-add_action( 'customize_preview_init', 'sydney_customize_preview_js' );
+add_action( 'customize_preview_init', 'life_in_balance_customize_preview_js' );
 
 
 
@@ -2012,37 +2012,37 @@ add_action( 'customize_preview_init', 'sydney_customize_preview_js' );
  * Partials callbacks
  */
 //Slider titles
-function sydney_partial_slider_title_1() {
-    return get_theme_mod('slider_title_1', __('Click the pencil icon to change this text','sydney'));
+function life_in_balance_partial_slider_title_1() {
+    return get_theme_mod('slider_title_1', __('Click the pencil icon to change this text','life_in_balance'));
 }
-function sydney_partial_slider_title_2() {
+function life_in_balance_partial_slider_title_2() {
     return get_theme_mod('slider_title_2');
 }
-function sydney_partial_slider_title_3() {
+function life_in_balance_partial_slider_title_3() {
     return get_theme_mod('slider_title_3');
 }
-function sydney_partial_slider_title_4() {
+function life_in_balance_partial_slider_title_4() {
     return get_theme_mod('slider_title_4');
 }
-function sydney_partial_slider_title_5() {
+function life_in_balance_partial_slider_title_5() {
     return get_theme_mod('slider_title_5');
 }
 //Slider subtitles
-function sydney_partial_slider_subtitle_1() {
-    return get_theme_mod('slider_subtitle_1', __('or go to the Customizer','sydney'));
+function life_in_balance_partial_slider_subtitle_1() {
+    return get_theme_mod('slider_subtitle_1', __('or go to the Customizer','life_in_balance'));
 }
-function sydney_partial_slider_subtitle_2() {
+function life_in_balance_partial_slider_subtitle_2() {
     return get_theme_mod('slider_subtitle_2');
 }
-function sydney_partial_slider_subtitle_3() {
+function life_in_balance_partial_slider_subtitle_3() {
     return get_theme_mod('slider_subtitle_3');
 }
-function sydney_partial_slider_subtitle_4() {
+function life_in_balance_partial_slider_subtitle_4() {
     return get_theme_mod('slider_subtitle_4');
 }
-function sydney_partial_slider_subtitle_5() {
+function life_in_balance_partial_slider_subtitle_5() {
     return get_theme_mod('slider_subtitle_5');
 }
-function sydney_partial_slider_button_text() {
+function life_in_balance_partial_slider_button_text() {
     return get_theme_mod('slider_button_text');
 }

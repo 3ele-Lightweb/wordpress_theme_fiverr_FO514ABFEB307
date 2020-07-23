@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * @package Sydney
+ * @package Life_In_Balance
  */
 ?>
 

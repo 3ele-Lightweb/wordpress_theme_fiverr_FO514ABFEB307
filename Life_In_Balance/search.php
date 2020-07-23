@@ -2,7 +2,7 @@
 /**
  * The template for displaying search results pages.
  *
- * @package Sydney
+ * @package Life_In_Balance
  */
 
 get_header(); ?>
@@ -13,7 +13,7 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h3><?php printf( __( 'Search Results for: %s', 'sydney' ), '<span>' . get_search_query() . '</span>' ); ?></h31>
+				<h3><?php printf( __( 'Search Results for: %s', 'life_in_balance' ), '<span>' . get_search_query() . '</span>' ); ?></h31>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>

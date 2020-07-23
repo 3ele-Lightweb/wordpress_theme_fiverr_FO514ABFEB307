@@ -1,24 +1,24 @@
 <?php
 /**
- * @package Sydney
+ * @package Life_In_Balance
  */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
-	<?php do_action('sydney_inside_top_post'); ?>
+	<?php do_action('life_in_balance_inside_top_post'); ?>
 
 	<header class="entry-header">
 		
 		<div class="meta-post">
-			<?php sydney_all_cats(); ?>
+			<?php life_in_balance_all_cats(); ?>
 		</div>
 
 		<?php the_title( '<h1 class="title-post entry-title">', '</h1>' ); ?>
 
 		<?php if (get_theme_mod('hide_meta_single') != 1 ) : ?>
 		<div class="single-meta">
-			<?php sydney_posted_on(); ?>
+			<?php life_in_balance_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
@@ -33,16 +33,16 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'sydney' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'life_in_balance' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php sydney_entry_footer(); ?>
+		<?php life_in_balance_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 
-	<?php do_action('sydney_inside_bottom_post'); ?>
+	<?php do_action('life_in_balance_inside_bottom_post'); ?>
 
 </article><!-- #post-## -->

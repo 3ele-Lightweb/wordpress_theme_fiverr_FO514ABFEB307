@@ -1,7 +1,7 @@
 I.Theme
 
-Sydney, Copyright 2015
-Sydney is licensed under GNU General Public License V2 or later. You can find a copy of it in the license.txt file.
+Life_In_Balance, Copyright 2015
+Life_In_Balance is licensed under GNU General Public License V2 or later. You can find a copy of it in the license.txt file.
 
 II. Resources
 
@@ -20,7 +20,7 @@ License: MIT
 License URI: http://opensource.org/licenses/MIT
 
 c) Icons
-The icon set used in Sydney is FontAwesome.
+The icon set used in Life_In_Balance is FontAwesome.
 Copyright: Dave Gandy
 Resource URI: http://fontawesome.io
 License: SIL Open Font License, Version 1.1
@@ -84,4 +84,4 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 III. Documentation
 
-Theme documentation is available on http://athemes.com/documentation/sydney/
+Theme documentation is available on http://athemes.com/documentation/life_in_balance/

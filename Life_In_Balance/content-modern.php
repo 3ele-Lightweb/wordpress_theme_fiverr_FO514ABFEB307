@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Sydney
+ * @package Life_In_Balance
  */
 ?>
 
@@ -8,7 +8,7 @@
 
 	<?php if ( has_post_thumbnail() && ( get_theme_mod( 'index_feat_image' ) != 1 ) ) : ?>
 		<div class="entry-thumb">
-			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('sydney-large-thumb'); ?></a>
+			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('life_in_balance-large-thumb'); ?></a>
 		</div>
 	<?php endif; ?>
 
@@ -17,8 +17,8 @@
 
 		<?php if ( 'post' == get_post_type() && get_theme_mod('hide_meta_index') != 1 ) : ?>
 		<div class="meta-post">
-			<?php sydney_post_date( $notext = true ); ?>
-			<?php sydney_get_first_cat(); ?>
+			<?php life_in_balance_post_date( $notext = true ); ?>
+			<?php life_in_balance_get_first_cat(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
@@ -32,15 +32,15 @@
 
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'sydney' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'life_in_balance' ),
 				'after'  => '</div>',
 			) );
 		?>
 
-		<a class="read-more" href="<?php the_permalink(); ?>"><?php echo esc_html__( 'Read more', 'sydney' ); ?> <span class="read-more-gt">&gt;</span></a>
+		<a class="read-more" href="<?php the_permalink(); ?>"><?php echo esc_html__( 'Read more', 'life_in_balance' ); ?> <span class="read-more-gt">&gt;</span></a>
 	</div><!-- .entry-post -->
 
 	<footer class="entry-footer">
-		<?php sydney_entry_footer(); ?>
+		<?php life_in_balance_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

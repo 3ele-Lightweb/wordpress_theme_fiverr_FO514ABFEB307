@@ -3,7 +3,7 @@
 /**
  * Integration with WPML for aThemes: Testimonials block
  */
-class Sydney_Pro_WPML_Elementor_Portfolio extends WPML_Elementor_Module_With_Items {
+class Life_In_Balance_Pro_WPML_Elementor_Portfolio extends WPML_Elementor_Module_With_Items {
 	
  
 	/**
@@ -28,13 +28,13 @@ class Sydney_Pro_WPML_Elementor_Portfolio extends WPML_Elementor_Module_With_Ite
 	protected function get_title( $field ) {
 	   switch( $field ) {
 			case 'title':
-				return esc_html__( '[aThemes Portfolio] Title', 'sydney' );
+				return esc_html__( '[aThemes Portfolio] Title', 'life_in_balance' );
    
 		  	case 'term':
-				return esc_html__( '[aThemes Portfolio] Term', 'sydney' );
+				return esc_html__( '[aThemes Portfolio] Term', 'life_in_balance' );
    
 			case 'link':
-				return esc_html__( '[aThemes Portfolio] Link', 'sydney' );
+				return esc_html__( '[aThemes Portfolio] Link', 'life_in_balance' );
    
 			default:
 				return '';

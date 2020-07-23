@@ -59,9 +59,9 @@
 			$('#slideshow').imagesLoaded( function() {
 				if ( $(window).width() <= 1024 ){	
 					var slideItemHeight = $('.slide-item:first-of-type').height();
-					$('.sydney-hero-area, #slideshow').height(slideItemHeight);
+					$('.life_in_balance-hero-area, #slideshow').height(slideItemHeight);
 				} else {
-					$('.sydney-hero-area').css('height', 'auto');
+					$('.life_in_balance-hero-area').css('height', 'auto');
 				}
 			});
 		}
@@ -233,9 +233,9 @@
 	var videoPopup = function() {
 
 		function closePopup() {
-			if ( $('.sydney-video.vid-lightbox .video-overlay').hasClass('popup-show') ) {
+			if ( $('.life_in_balance-video.vid-lightbox .video-overlay').hasClass('popup-show') ) {
 			    
-				var popup = $('.sydney-video.vid-lightbox .video-overlay.popup-show');
+				var popup = $('.life_in_balance-video.vid-lightbox .video-overlay.popup-show');
 
 			    if ( popup.find('iframe').hasClass('yt-video') ) {
 			    	var vid = popup.find('iframe').attr('src').replace("&autoplay=1", "");
@@ -269,11 +269,11 @@
 			}
 		});
 
-		$('.sydney-video.vid-lightbox .video-overlay').on('click',function () {
+		$('.life_in_balance-video.vid-lightbox .video-overlay').on('click',function () {
 			closePopup();
 		});
 
-		$('.sydney-video.vid-lightbox').parents('.panel-row-style').css({'z-index': '12', 'overflow': 'visible'});	
+		$('.life_in_balance-video.vid-lightbox').parents('.panel-row-style').css({'z-index': '12', 'overflow': 'visible'});	
 
 	};	
 

@@ -2,7 +2,7 @@
 /**
  * Multiple checkbox
  */
-class Sydney_Customize_Control_Checkbox_Multiple extends WP_Customize_Control {
+class Life_In_Balance_Customize_Control_Checkbox_Multiple extends WP_Customize_Control {
 
     /**
      * The type of customize control being rendered.
@@ -21,7 +21,7 @@ class Sydney_Customize_Control_Checkbox_Multiple extends WP_Customize_Control {
      * @return void
      */
     public function enqueue() {
-        wp_enqueue_script( 'sydney-multiple-checkbox-script', trailingslashit( get_template_directory_uri() ) . 'js/customize-controls.js', array( 'jquery' ) );
+        wp_enqueue_script( 'life_in_balance-multiple-checkbox-script', trailingslashit( get_template_directory_uri() ) . 'js/customize-controls.js', array( 'jquery' ) );
     }
 
     /**

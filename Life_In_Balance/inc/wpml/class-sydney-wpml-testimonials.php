@@ -3,7 +3,7 @@
 /**
  * Integration with WPML for aThemes: Testimonials block
  */
-class Sydney_Pro_WPML_Elementor_Testimonials extends WPML_Elementor_Module_With_Items {
+class Life_In_Balance_Pro_WPML_Elementor_Testimonials extends WPML_Elementor_Module_With_Items {
 	
  
 	/**
@@ -28,13 +28,13 @@ class Sydney_Pro_WPML_Elementor_Testimonials extends WPML_Elementor_Module_With_
 	protected function get_title( $field ) {
 	   switch( $field ) {
 			case 'name':
-				return esc_html__( '[aThemes Testimonials] Name', 'sydney' );
+				return esc_html__( '[aThemes Testimonials] Name', 'life_in_balance' );
    
 		  	case 'position':
-				return esc_html__( '[aThemes Testimonials] Position', 'sydney' );
+				return esc_html__( '[aThemes Testimonials] Position', 'life_in_balance' );
    
 			case 'testimonial':
-				return esc_html__( '[aThemes Testimonials] Testimonial', 'sydney' );
+				return esc_html__( '[aThemes Testimonials] Testimonial', 'life_in_balance' );
    
 			default:
 				return '';

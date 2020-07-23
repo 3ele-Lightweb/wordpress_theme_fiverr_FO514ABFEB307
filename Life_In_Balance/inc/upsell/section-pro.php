@@ -5,7 +5,7 @@
  * @since  1.0.0
  * @access public
  */
-class Sydney_Customize_Upsell_Section_Pro extends WP_Customize_Section {
+class Life_In_Balance_Customize_Upsell_Section_Pro extends WP_Customize_Section {
 
 	/**
 	 * The type of customize section being rendered.

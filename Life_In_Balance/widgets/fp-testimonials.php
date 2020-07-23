@@ -1,11 +1,11 @@
 <?php
 
-class Sydney_Testimonials extends WP_Widget {
+class Life_In_Balance_Testimonials extends WP_Widget {
 
 	public function __construct() {
-		$widget_ops = array('classname' => 'sydney_testimonials_widget', 'description' => __( 'Display your testimonials in a slider.', 'sydney') );
-        parent::__construct(false, $name = __('Sydney FP: Testimonials', 'sydney'), $widget_ops);
-		$this->alt_option_name = 'sydney_testimonials_widget';
+		$widget_ops = array('classname' => 'life_in_balance_testimonials_widget', 'description' => __( 'Display your testimonials in a slider.', 'life_in_balance') );
+        parent::__construct(false, $name = __('Life_In_Balance FP: Testimonials', 'life_in_balance'), $widget_ops);
+		$this->alt_option_name = 'life_in_balance_testimonials_widget';
     }
 	
 	function form($instance) {
@@ -17,20 +17,20 @@ class Sydney_Testimonials extends WP_Widget {
 		$autoplay    	= isset( $instance['autoplay'] ) ? intval( $instance['autoplay'] ) : 5000;	
 	?>
 
-	<p><?php _e('In order to display this widget, you must first add some testimonials from your admin area.', 'sydney'); ?></p>
+	<p><?php _e('In order to display this widget, you must first add some testimonials from your admin area.', 'life_in_balance'); ?></p>
 	<p>
-	<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'sydney'); ?></label>
+	<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'life_in_balance'); ?></label>
 	<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
 	</p>
-	<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of testimonials to show (-1 shows all of them):', 'sydney' ); ?></label>
+	<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of testimonials to show (-1 shows all of them):', 'life_in_balance' ); ?></label>
 	<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3" /></p>
-    <p><label for="<?php echo $this->get_field_id('see_all'); ?>"><?php _e('The URL for your button [In case you want a button below your testimonials block]', 'sydney'); ?></label>
+    <p><label for="<?php echo $this->get_field_id('see_all'); ?>"><?php _e('The URL for your button [In case you want a button below your testimonials block]', 'life_in_balance'); ?></label>
 	<input class="widefat" id="<?php echo $this->get_field_id( 'see_all' ); ?>" name="<?php echo $this->get_field_name( 'see_all' ); ?>" type="text" value="<?php echo $see_all; ?>" size="3" /></p>	
-    <p><label for="<?php echo $this->get_field_id('see_all_text'); ?>"><?php _e('The text for the button [Defaults to <em>See all our testimonials</em> if left empty]', 'sydney'); ?></label>
+    <p><label for="<?php echo $this->get_field_id('see_all_text'); ?>"><?php _e('The text for the button [Defaults to <em>See all our testimonials</em> if left empty]', 'life_in_balance'); ?></label>
 	<input class="widefat" id="<?php echo $this->get_field_id( 'see_all_text' ); ?>" name="<?php echo $this->get_field_name( 'see_all_text' ); ?>" type="text" value="<?php echo $see_all_text; ?>" size="3" /></p>		
-	<p><label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php _e( 'Enter the slug for your category or leave empty to show all testimonials.', 'sydney' ); ?></label>
+	<p><label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php _e( 'Enter the slug for your category or leave empty to show all testimonials.', 'life_in_balance' ); ?></label>
 	<input class="widefat" id="<?php echo $this->get_field_id( 'category' ); ?>" name="<?php echo $this->get_field_name( 'category' ); ?>" type="text" value="<?php echo $category; ?>" size="3" /></p>
-	<p><label for="<?php echo $this->get_field_id( 'autoplay' ); ?>"><?php _e( 'Autoplay time [ms]', 'sydney' ); ?></label>
+	<p><label for="<?php echo $this->get_field_id( 'autoplay' ); ?>"><?php _e( 'Autoplay time [ms]', 'life_in_balance' ); ?></label>
 	<input id="<?php echo $this->get_field_id( 'autoplay' ); ?>" name="<?php echo $this->get_field_name( 'autoplay' ); ?>" type="text" value="<?php echo $autoplay; ?>" size="3" /></p>
     		
 	<?php
@@ -105,7 +105,7 @@ class Sydney_Testimonials extends WP_Widget {
 					<?php if ($see_all_text) : ?>
 						<?php echo $see_all_text; ?>
 					<?php else : ?>
-						<?php echo __('See all our testimonials', 'sydney'); ?>
+						<?php echo __('See all our testimonials', 'life_in_balance'); ?>
 					<?php endif; ?>
 				</a>
 			<?php endif; ?>	

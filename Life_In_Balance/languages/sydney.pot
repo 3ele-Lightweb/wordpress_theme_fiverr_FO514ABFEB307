@@ -1,8 +1,8 @@
-# Copyright (C) 2018 Sydney
-# This file is distributed under the same license as the Sydney package.
+# Copyright (C) 2018 Life_In_Balance
+# This file is distributed under the same license as the Life_In_Balance package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Sydney\n"
+"Project-Id-Version: Life_In_Balance\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -97,11 +97,11 @@ msgid "Create your menu here"
 msgstr ""
 
 #: functions.php:436
-msgid "Welcome to Sydney. To get started please make sure to visit our <a href=\"%s\">welcome page</a>."
+msgid "Welcome to Life_In_Balance. To get started please make sure to visit our <a href=\"%s\">welcome page</a>."
 msgstr ""
 
 #: functions.php:437
-msgid "Get started with Sydney"
+msgid "Get started with Life_In_Balance"
 msgstr ""
 
 #: header.php:30
@@ -237,7 +237,7 @@ msgid "Upload your first image for the slider"
 msgstr ""
 
 #: inc/customizer.php:287, inc/customizer.php:1903
-msgid "Welcome to Sydney"
+msgid "Welcome to Life_In_Balance"
 msgstr ""
 
 #: inc/customizer.php:295
@@ -497,7 +497,7 @@ msgid "Fonts"
 msgstr ""
 
 #: inc/customizer.php:1044
-msgid "Google Fonts can be found here: google.com/fonts. See the documentation if you need help in selecting Google Fonts: athemes.com/documentation/sydney"
+msgid "Google Fonts can be found here: google.com/fonts. See the documentation if you need help in selecting Google Fonts: athemes.com/documentation/life_in_balance"
 msgstr ""
 
 #: inc/customizer.php:1055
@@ -645,7 +645,7 @@ msgid "Theme info"
 msgstr ""
 
 #: inc/customizer.php:1763
-msgid "1. Documentation for Sydney can be found "
+msgid "1. Documentation for Life_In_Balance can be found "
 msgstr ""
 
 #: inc/customizer.php:1763
@@ -661,7 +661,7 @@ msgid "Page %s"
 msgstr ""
 
 #: inc/page-builder.php:44
-msgid "Sydney Theme Widgets"
+msgid "Life_In_Balance Theme Widgets"
 msgstr ""
 
 #: inc/page-builder.php:57
@@ -925,7 +925,7 @@ msgid "Posted on %s"
 msgstr ""
 
 #: inc/theme-info.php:16, inc/theme-info.php:16
-msgid "Sydney Info"
+msgid "Life_In_Balance Info"
 msgstr ""
 
 #: inc/theme-info.php:25
@@ -933,11 +933,11 @@ msgid "Hello, %s,"
 msgstr ""
 
 #: inc/theme-info.php:26
-msgid "Welcome to Sydney version %s"
+msgid "Welcome to Life_In_Balance version %s"
 msgstr ""
 
 #: inc/theme-info.php:27
-msgid "Sydney is now installed and ready to go. To help you with the next step, we’ve gathered together on this page all the resources you might need. We hope you enjoy using Sydney. "
+msgid "Life_In_Balance is now installed and ready to go. To help you with the next step, we’ve gathered together on this page all the resources you might need. We hope you enjoy using Life_In_Balance. "
 msgstr ""
 
 #: inc/theme-info.php:33
@@ -961,7 +961,7 @@ msgid "Step 1 - Implement recommended actions"
 msgstr ""
 
 #: inc/theme-info.php:43
-msgid "We've made a list of steps for you to follow to get the most of Sydney."
+msgid "We've made a list of steps for you to follow to get the most of Life_In_Balance."
 msgstr ""
 
 #: inc/theme-info.php:44
@@ -985,7 +985,7 @@ msgid "Step 3 - Customize"
 msgstr ""
 
 #: inc/theme-info.php:51
-msgid "Use the Customizer to make Sydney your own."
+msgid "Use the Customizer to make Life_In_Balance your own."
 msgstr ""
 
 #: inc/theme-info.php:52
@@ -1009,11 +1009,11 @@ msgid "Plugin installed and active!"
 msgstr ""
 
 #: inc/theme-info.php:69
-msgid "Install: Sydney Toolbox"
+msgid "Install: Life_In_Balance Toolbox"
 msgstr ""
 
 #: inc/theme-info.php:70
-msgid "It is highly recommend that you install Sydney Toolbox. It will create custom post types like services and employees for you to use on your website."
+msgid "It is highly recommend that you install Life_In_Balance Toolbox. It will create custom post types like services and employees for you to use on your website."
 msgstr ""
 
 #: inc/theme-info.php:84
@@ -1073,11 +1073,11 @@ msgid "Feature"
 msgstr ""
 
 #: inc/theme-info.php:129
-msgid "Sydney"
+msgid "Life_In_Balance"
 msgstr ""
 
 #: inc/theme-info.php:130
-msgid "Sydney Pro"
+msgid "Life_In_Balance Pro"
 msgstr ""
 
 #: inc/theme-info.php:135
@@ -1157,7 +1157,7 @@ msgid "Priority support"
 msgstr ""
 
 #: inc/theme-info.php:241
-msgid "Buy Sydney Pro "
+msgid "Buy Life_In_Balance Pro "
 msgstr ""
 
 #: page-templates/page_front-page.php:2
@@ -1559,7 +1559,7 @@ msgid "Display your contact info"
 msgstr ""
 
 #: widgets/contact-info.php:7
-msgid "Sydney: Contact info"
+msgid "Life_In_Balance: Contact info"
 msgstr ""
 
 #: widgets/contact-info.php:20, widgets/fp-call-to-action.php:18, widgets/fp-clients.php:23, widgets/fp-employees.php:23, widgets/fp-facts.php:32, widgets/fp-latest-news.php:19, widgets/fp-services-type-a.php:30, widgets/fp-services-type-b.php:29, widgets/fp-skills.php:24, widgets/fp-testimonials.php:22, widgets/video-widget.php:20
@@ -1583,7 +1583,7 @@ msgid "Display a call to action block."
 msgstr ""
 
 #: widgets/fp-call-to-action.php:7
-msgid "Sydney FP: Call to action"
+msgid "Life_In_Balance FP: Call to action"
 msgstr ""
 
 #: widgets/fp-call-to-action.php:20
@@ -1607,7 +1607,7 @@ msgid "Display your clients list."
 msgstr ""
 
 #: widgets/fp-clients.php:7
-msgid "Sydney FP: Clients"
+msgid "Life_In_Balance FP: Clients"
 msgstr ""
 
 #: widgets/fp-clients.php:21
@@ -1643,7 +1643,7 @@ msgid "Display your team members in a stylish way."
 msgstr ""
 
 #: widgets/fp-employees.php:7
-msgid "Sydney FP: Employees"
+msgid "Life_In_Balance FP: Employees"
 msgstr ""
 
 #: widgets/fp-employees.php:21
@@ -1679,7 +1679,7 @@ msgid "Show your visitors some facts about your company."
 msgstr ""
 
 #: widgets/fp-facts.php:8
-msgid "Sydney FP: Facts"
+msgid "Life_In_Balance FP: Facts"
 msgstr ""
 
 #: widgets/fp-facts.php:30
@@ -1747,7 +1747,7 @@ msgid "Show the latest news from your blog."
 msgstr ""
 
 #: widgets/fp-latest-news.php:7
-msgid "Sydney FP: Latest News"
+msgid "Life_In_Balance FP: Latest News"
 msgstr ""
 
 #: widgets/fp-latest-news.php:23
@@ -1767,7 +1767,7 @@ msgid "A simple list widget"
 msgstr ""
 
 #: widgets/fp-list.php:13
-msgid "Sydney FP: List"
+msgid "Life_In_Balance FP: List"
 msgstr ""
 
 #: widgets/fp-list.php:63, widgets/fp-portfolio.php:152, widgets/fp-social.php:57
@@ -1795,7 +1795,7 @@ msgid "Display your projects in a grid."
 msgstr ""
 
 #: widgets/fp-portfolio.php:13
-msgid "Sydney FP: Portfolio"
+msgid "Life_In_Balance FP: Portfolio"
 msgstr ""
 
 #: widgets/fp-portfolio.php:35, widgets/fp-portfolio.php:148
@@ -1827,7 +1827,7 @@ msgid "Show what services you are able to provide."
 msgstr ""
 
 #: widgets/fp-services-type-a.php:12
-msgid "Sydney FP: Services Type A"
+msgid "Life_In_Balance FP: Services Type A"
 msgstr ""
 
 #: widgets/fp-services-type-a.php:28, widgets/fp-services-type-b.php:27
@@ -1871,7 +1871,7 @@ msgid "See all our services"
 msgstr ""
 
 #: widgets/fp-services-type-b.php:12
-msgid "Sydney FP: Services type B"
+msgid "Life_In_Balance FP: Services type B"
 msgstr ""
 
 #: widgets/fp-services-type-b.php:41
@@ -1883,7 +1883,7 @@ msgid "Show your visitors some of your skills."
 msgstr ""
 
 #: widgets/fp-skills.php:7
-msgid "Sydney FP: Skills"
+msgid "Life_In_Balance FP: Skills"
 msgstr ""
 
 #: widgets/fp-skills.php:30
@@ -1923,7 +1923,7 @@ msgid "Display your social profile on your front page"
 msgstr ""
 
 #: widgets/fp-social.php:6
-msgid "Sydney FP: Social Profile"
+msgid "Life_In_Balance FP: Social Profile"
 msgstr ""
 
 #: widgets/fp-social.php:52
@@ -1947,7 +1947,7 @@ msgid "Display your testimonials in a slider."
 msgstr ""
 
 #: widgets/fp-testimonials.php:7
-msgid "Sydney FP: Testimonials"
+msgid "Life_In_Balance FP: Testimonials"
 msgstr ""
 
 #: widgets/fp-testimonials.php:20
@@ -1983,7 +1983,7 @@ msgid "Display a video from Youtube, Vimeo etc."
 msgstr ""
 
 #: widgets/video-widget.php:7
-msgid "Sydney: Video"
+msgid "Life_In_Balance: Video"
 msgstr ""
 
 #: widgets/video-widget.php:24
@@ -2011,5 +2011,5 @@ msgid "Ready for more?"
 msgstr ""
 
 #: inc/upsell/class-customize.php:77
-msgid "Get Sydney Pro"
+msgid "Get Life_In_Balance Pro"
 msgstr ""

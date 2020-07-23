@@ -2,16 +2,16 @@
 /**
  * Portfolio widget
  *
- * @package Sydney
+ * @package Life_In_Balance
  */
 
 
-class Sydney_Portfolio extends WP_Widget {
+class Life_In_Balance_Portfolio extends WP_Widget {
 
 	public function __construct() {
-		$widget_ops = array('classname' => 'sydney_portfolio_widget', 'description' => __( 'Display your projects in a grid.', 'sydney') );
-       parent::__construct(false, $name = __('Sydney FP: Portfolio', 'sydney'), $widget_ops);
-		$this->alt_option_name = 'sydney_portfolio_widget';
+		$widget_ops = array('classname' => 'life_in_balance_portfolio_widget', 'description' => __( 'Display your projects in a grid.', 'life_in_balance') );
+       parent::__construct(false, $name = __('Life_In_Balance FP: Portfolio', 'life_in_balance'), $widget_ops);
+		$this->alt_option_name = 'life_in_balance_portfolio_widget';
   }
 
   public function widget( $args, $instance ) {
@@ -32,7 +32,7 @@ class Sydney_Portfolio extends WP_Widget {
      'post_type'     => 'projects',
      'include'       => $includes,
      'filter'        => $show_filter,
-     'show_all_text' => ! empty( $show_all_text ) ? $show_all_text : __('Show all', 'sydney')
+     'show_all_text' => ! empty( $show_all_text ) ? $show_all_text : __('Show all', 'life_in_balance')
     );
 
     $output = ''; //Start output
@@ -101,7 +101,7 @@ class Sydney_Portfolio extends WP_Widget {
 							 $output .= ($show_project_title == 1) ? $project_title : '';
 							 $output .= '</a>';
 							 $output .= '<a href="' . esc_url($project_url) . '">';
-							 $output .= get_the_post_thumbnail($post->ID,'sydney-mas-thumb');
+							 $output .= get_the_post_thumbnail($post->ID,'life_in_balance-mas-thumb');
 							 $output .= '</a>';
 							 $output .= '</div>';
            else :
@@ -110,7 +110,7 @@ class Sydney_Portfolio extends WP_Widget {
 							 $output .= '<div class="project-pop"></div>';
 							 $output .= ($show_project_title == 1) ? $project_title : '';
 							 $output .= '</a><a href="' . get_the_permalink() . '">';
-							 $output .= get_the_post_thumbnail($post->ID,'sydney-mas-thumb');
+							 $output .= get_the_post_thumbnail($post->ID,'life_in_balance-mas-thumb');
 							 $output .= '</a>';
 							 $output .= '</div>';
            endif;
@@ -145,22 +145,22 @@ class Sydney_Portfolio extends WP_Widget {
     $includes      = isset( $instance['includes'] ) ? esc_attr($instance['includes']) : '';
     $show_filter   = isset( $instance['show_filter'] ) ? (bool) $instance['show_filter'] : true;
 		$show_project_title = isset( $instance['show_project_title'] ) ? (bool) $instance['show_project_title'] : false;
-    $show_all_text = isset( $instance['show_all_text'] )  ? esc_html($instance['show_all_text']) : __('Show all', 'sydney');
+    $show_all_text = isset( $instance['show_all_text'] )  ? esc_html($instance['show_all_text']) : __('Show all', 'life_in_balance');
 
 	?>
 
-   <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'sydney'); ?></label>
+   <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'life_in_balance'); ?></label>
    <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
-   <p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of projects to show (-1 shows all of them):', 'sydney' ); ?></label>
+   <p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of projects to show (-1 shows all of them):', 'life_in_balance' ); ?></label>
    <input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3" /></p>
-   <p><label for="<?php echo $this->get_field_id('includes'); ?>"><?php _e('Enter the slugs (comma separated) for your categories or leave empty to show all projects.', 'sydney'); ?></label>
+   <p><label for="<?php echo $this->get_field_id('includes'); ?>"><?php _e('Enter the slugs (comma separated) for your categories or leave empty to show all projects.', 'life_in_balance'); ?></label>
    <input class="widefat" id="<?php echo $this->get_field_id('includes'); ?>" name="<?php echo $this->get_field_name('includes'); ?>" type="text" value="<?php echo $includes; ?>" /></p>
 	 <p><input class="checkbox" type="checkbox" <?php checked( $show_filter ); ?> id="<?php echo $this->get_field_id( 'show_filter' ); ?>" name="<?php echo $this->get_field_name( 'show_filter' ); ?>" />
-   <label for="<?php echo $this->get_field_id( 'show_filter' ); ?>"><?php _e( 'Show navigation filter? (Category slugs must be specified).', 'sydney' ); ?></label></p>
-	 <p><label for="<?php echo $this->get_field_id('show_all_text'); ?>"><?php _e('"Show all" text:', 'sydney'); ?></label>
+   <label for="<?php echo $this->get_field_id( 'show_filter' ); ?>"><?php _e( 'Show navigation filter? (Category slugs must be specified).', 'life_in_balance' ); ?></label></p>
+	 <p><label for="<?php echo $this->get_field_id('show_all_text'); ?>"><?php _e('"Show all" text:', 'life_in_balance'); ?></label>
    <input class="widefat" id="<?php echo $this->get_field_id('show_all_text'); ?>" name="<?php echo $this->get_field_name('show_all_text'); ?>" type="text" value="<?php echo esc_attr($show_all_text); ?>" /></p>
 	 <p><input class="checkbox" type="checkbox" <?php checked( $show_project_title ); ?> id="<?php echo $this->get_field_id( 'show_project_title' ); ?>" name="<?php echo $this->get_field_name( 'show_project_title' ); ?>" />
-   <label for="<?php echo $this->get_field_id( 'show_project_title' ); ?>"><?php _e( 'Show project title?', 'sydney' ); ?></label></p>
+   <label for="<?php echo $this->get_field_id( 'show_project_title' ); ?>"><?php _e( 'Show project title?', 'life_in_balance' ); ?></label></p>
 
    <?php
 

@@ -1,11 +1,11 @@
 <?php
 /**
- * Sydney functions and definitions
+ * Life_In_Balance functions and definitions
  *
- * @package Sydney
+ * @package Life_In_Balance
  */
 
-if ( ! function_exists( 'sydney_setup' ) ) :
+if ( ! function_exists( 'life_in_balance_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -13,15 +13,15 @@ if ( ! function_exists( 'sydney_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function sydney_setup() {
+function life_in_balance_setup() {
 
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on Sydney, use a find and replace
-	 * to change 'sydney' to the name of your theme in all the template files
+	 * If you're building a theme based on Life_In_Balance, use a find and replace
+	 * to change 'life_in_balance' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'sydney', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'life_in_balance', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -46,15 +46,15 @@ function sydney_setup() {
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
-	add_image_size('sydney-large-thumb', 830);
-	add_image_size('sydney-medium-thumb', 550, 400, true);
-	add_image_size('sydney-small-thumb', 230);
-	add_image_size('sydney-service-thumb', 350);
-	add_image_size('sydney-mas-thumb', 480);
+	add_image_size('life_in_balance-large-thumb', 830);
+	add_image_size('life_in_balance-medium-thumb', 550, 400, true);
+	add_image_size('life_in_balance-small-thumb', 230);
+	add_image_size('life_in_balance-service-thumb', 350);
+	add_image_size('life_in_balance-mas-thumb', 480);
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'sydney' ),
+		'primary' => __( 'Primary Menu', 'life_in_balance' ),
 	) );
 
 	/*
@@ -74,7 +74,7 @@ function sydney_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'sydney_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'life_in_balance_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
@@ -88,17 +88,17 @@ function sydney_setup() {
 		set_theme_mod( 'forked_owl_carousel', true );
 	}	
 }
-endif; // sydney_setup
-add_action( 'after_setup_theme', 'sydney_setup' );
+endif; // life_in_balance_setup
+add_action( 'after_setup_theme', 'life_in_balance_setup' );
 
 /**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function sydney_widgets_init() {
+function life_in_balance_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'sydney' ),
+		'name'          => __( 'Sidebar', 'life_in_balance' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -111,7 +111,7 @@ function sydney_widgets_init() {
 	$widget_areas = get_theme_mod('footer_widget_areas', '3');
 	for ($i=1; $i<=$widget_areas; $i++) {
 		register_sidebar( array(
-			'name'          => __( 'Footer ', 'sydney' ) . $i,
+			'name'          => __( 'Footer ', 'life_in_balance' ) . $i,
 			'id'            => 'footer-' . $i,
 			'description'   => '',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -123,24 +123,24 @@ function sydney_widgets_init() {
 
 	//Register the front page widgets
 	if ( defined( 'SITEORIGIN_PANELS_VERSION' ) ) {
-		register_widget( 'Sydney_List' );
-		register_widget( 'Sydney_Services_Type_A' );
-		register_widget( 'Sydney_Services_Type_B' );
-		register_widget( 'Sydney_Facts' );
-		register_widget( 'Sydney_Clients' );
-		register_widget( 'Sydney_Testimonials' );
-		register_widget( 'Sydney_Skills' );
-		register_widget( 'Sydney_Action' );
-		register_widget( 'Sydney_Video_Widget' );
-		register_widget( 'Sydney_Social_Profile' );
-		register_widget( 'Sydney_Employees' );
-		register_widget( 'Sydney_Latest_News' );
-		register_widget( 'Sydney_Portfolio' );
+		register_widget( 'Life_In_Balance_List' );
+		register_widget( 'Life_In_Balance_Services_Type_A' );
+		register_widget( 'Life_In_Balance_Services_Type_B' );
+		register_widget( 'Life_In_Balance_Facts' );
+		register_widget( 'Life_In_Balance_Clients' );
+		register_widget( 'Life_In_Balance_Testimonials' );
+		register_widget( 'Life_In_Balance_Skills' );
+		register_widget( 'Life_In_Balance_Action' );
+		register_widget( 'Life_In_Balance_Video_Widget' );
+		register_widget( 'Life_In_Balance_Social_Profile' );
+		register_widget( 'Life_In_Balance_Employees' );
+		register_widget( 'Life_In_Balance_Latest_News' );
+		register_widget( 'Life_In_Balance_Portfolio' );
 	}
-	register_widget( 'Sydney_Contact_Info' );
+	register_widget( 'Life_In_Balance_Contact_Info' );
 
 }
-add_action( 'widgets_init', 'sydney_widgets_init' );
+add_action( 'widgets_init', 'life_in_balance_widgets_init' );
 
 /**
  * Load the front page widgets.
@@ -177,65 +177,65 @@ if ( ! defined( 'ELEMENTOR_PARTNER_ID' ) ) {
 /**
  * Elementor editor scripts
  */
-function sydney_elementor_editor_scripts() {
-	wp_enqueue_script( 'sydney-elementor-editor', get_template_directory_uri() . '/js/elementor.js', array( 'jquery' ), '20200504', true );
+function life_in_balance_elementor_editor_scripts() {
+	wp_enqueue_script( 'life_in_balance-elementor-editor', get_template_directory_uri() . '/js/elementor.js', array( 'jquery' ), '20200504', true );
 }
-add_action('elementor/frontend/after_register_scripts', 'sydney_elementor_editor_scripts');
+add_action('elementor/frontend/after_register_scripts', 'life_in_balance_elementor_editor_scripts');
 
 /**
  * Enqueue scripts and styles.
  */
-function sydney_scripts() {
+function life_in_balance_scripts() {
 
-	wp_enqueue_style( 'sydney-google-fonts', esc_url( sydney_enqueue_google_fonts() ), array(), null );
+	wp_enqueue_style( 'life_in_balance-google-fonts', esc_url( life_in_balance_enqueue_google_fonts() ), array(), null );
 
 	if ( is_customize_preview() ) {
-		wp_enqueue_style( 'sydney-preview-google-fonts-body', 'https://fonts.googleapis.com/', array(), null );
-		wp_enqueue_style( 'sydney-preview-google-fonts-headings', 'https://fonts.googleapis.com/', array(), null );
+		wp_enqueue_style( 'life_in_balance-preview-google-fonts-body', 'https://fonts.googleapis.com/', array(), null );
+		wp_enqueue_style( 'life_in_balance-preview-google-fonts-headings', 'https://fonts.googleapis.com/', array(), null );
 	}
 
-	wp_enqueue_style( 'sydney-style', get_stylesheet_uri(), '', '20200129' );
+	wp_enqueue_style( 'life_in_balance-style', get_stylesheet_uri(), '', '20200129' );
 
-	wp_enqueue_style( 'sydney-ie9', get_template_directory_uri() . '/css/ie9.css', array( 'sydney-style' ) );
-	wp_style_add_data( 'sydney-ie9', 'conditional', 'lte IE 9' );
+	wp_enqueue_style( 'life_in_balance-ie9', get_template_directory_uri() . '/css/ie9.css', array( 'life_in_balance-style' ) );
+	wp_style_add_data( 'life_in_balance-ie9', 'conditional', 'lte IE 9' );
 
-	wp_enqueue_script( 'sydney-scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'),'', true );
+	wp_enqueue_script( 'life_in_balance-scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'),'', true );
 
-	wp_enqueue_script( 'sydney-main', get_template_directory_uri() . '/js/main.min.js', array('jquery'),'20200504', true );
+	wp_enqueue_script( 'life_in_balance-main', get_template_directory_uri() . '/js/main.min.js', array('jquery'),'20200504', true );
 
 	if ( defined( 'SITEORIGIN_PANELS_VERSION' )	) {
-		wp_enqueue_script( 'sydney-so-legacy-scripts', get_template_directory_uri() . '/js/so-legacy.js', array('jquery'),'', true );
-		wp_enqueue_script( 'sydney-so-legacy-main', get_template_directory_uri() . '/js/so-legacy-main.js', array('jquery'),'', true );
-		wp_enqueue_style( 'sydney-font-awesome', get_template_directory_uri() . '/fonts/font-awesome.min.css' );
+		wp_enqueue_script( 'life_in_balance-so-legacy-scripts', get_template_directory_uri() . '/js/so-legacy.js', array('jquery'),'', true );
+		wp_enqueue_script( 'life_in_balance-so-legacy-main', get_template_directory_uri() . '/js/so-legacy-main.js', array('jquery'),'', true );
+		wp_enqueue_style( 'life_in_balance-font-awesome', get_template_directory_uri() . '/fonts/font-awesome.min.css' );
 	}
 
 	if ( get_theme_mod('blog_layout') == 'masonry-layout' && (is_home() || is_archive()) ) {
 
-		wp_enqueue_script( 'sydney-masonry-init', get_template_directory_uri() . '/js/masonry-init.js', array('masonry'),'', true );
+		wp_enqueue_script( 'life_in_balance-masonry-init', get_template_directory_uri() . '/js/masonry-init.js', array('masonry'),'', true );
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'sydney_scripts' );
+add_action( 'wp_enqueue_scripts', 'life_in_balance_scripts' );
 
 /**
  * Disable Elementor globals on theme activation
  */
-function sydney_disable_elementor_globals () {
+function life_in_balance_disable_elementor_globals () {
 	update_option( 'elementor_disable_color_schemes', 'yes' );
 	update_option( 'elementor_disable_typography_schemes', 'yes' );
 }
-add_action('after_switch_theme', 'sydney_disable_elementor_globals');
+add_action('after_switch_theme', 'life_in_balance_disable_elementor_globals');
 
 /**
  * Enqueue Bootstrap
  */
-function sydney_enqueue_bootstrap() {
-	wp_enqueue_style( 'sydney-bootstrap', get_template_directory_uri() . '/css/bootstrap/bootstrap.min.css', array(), true );
+function life_in_balance_enqueue_bootstrap() {
+	wp_enqueue_style( 'life_in_balance-bootstrap', get_template_directory_uri() . '/css/bootstrap/bootstrap.min.css', array(), true );
 }
-add_action( 'wp_enqueue_scripts', 'sydney_enqueue_bootstrap', 9 );
+add_action( 'wp_enqueue_scripts', 'life_in_balance_enqueue_bootstrap', 9 );
 
 /**
  * Elementor editor scripts
@@ -244,18 +244,18 @@ add_action( 'wp_enqueue_scripts', 'sydney_enqueue_bootstrap', 9 );
 /**
  * Change the excerpt length
  */
-function sydney_excerpt_length( $length ) {
+function life_in_balance_excerpt_length( $length ) {
 
   $excerpt = get_theme_mod('exc_lenght', '55');
   return $excerpt;
 
 }
-add_filter( 'excerpt_length', 'sydney_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'life_in_balance_excerpt_length', 999 );
 
 /**
  * Blog layout
  */
-function sydney_blog_layout() {
+function life_in_balance_blog_layout() {
 	$layout = get_theme_mod('blog_layout','classic-alt');
 	return $layout;
 }
@@ -263,16 +263,16 @@ function sydney_blog_layout() {
 /**
  * Menu fallback
  */
-function sydney_menu_fallback() {
+function life_in_balance_menu_fallback() {
 	if ( current_user_can('edit_theme_options') ) {
-		echo '<a class="menu-fallback" href="' . admin_url('nav-menus.php') . '">' . __( 'Create your menu here', 'sydney' ) . '</a>';
+		echo '<a class="menu-fallback" href="' . admin_url('nav-menus.php') . '">' . __( 'Create your menu here', 'life_in_balance' ) . '</a>';
 	}
 }
 
 /**
  * Header image overlay
  */
-function sydney_header_overlay() {
+function life_in_balance_header_overlay() {
 	$overlay = get_theme_mod( 'hide_overlay', 0);
 	if ( !$overlay ) {
 		echo '<div class="overlay"></div>';
@@ -282,7 +282,7 @@ function sydney_header_overlay() {
 /**
  * Header video
  */
-function sydney_header_video() {
+function life_in_balance_header_video() {
 
 	if ( !function_exists('the_custom_header_markup') ) {
 		return;
@@ -300,21 +300,21 @@ function sydney_header_video() {
  * Polylang compatibility
  */
 if ( function_exists('pll_register_string') ) :
-function sydney_polylang() {
+function life_in_balance_polylang() {
 	for ( $i=1; $i<=5; $i++) {
-		pll_register_string('Slide title ' . $i, get_theme_mod('slider_title_' . $i), 'Sydney');
-		pll_register_string('Slide subtitle ' . $i, get_theme_mod('slider_subtitle_' . $i), 'Sydney');
+		pll_register_string('Slide title ' . $i, get_theme_mod('slider_title_' . $i), 'Life_In_Balance');
+		pll_register_string('Slide subtitle ' . $i, get_theme_mod('slider_subtitle_' . $i), 'Life_In_Balance');
 	}
-	pll_register_string('Slider button text', get_theme_mod('slider_button_text'), 'Sydney');
-	pll_register_string('Slider button URL', get_theme_mod('slider_button_url'), 'Sydney');
+	pll_register_string('Slider button text', get_theme_mod('slider_button_text'), 'Life_In_Balance');
+	pll_register_string('Slider button URL', get_theme_mod('slider_button_url'), 'Life_In_Balance');
 }
-add_action( 'admin_init', 'sydney_polylang' );
+add_action( 'admin_init', 'life_in_balance_polylang' );
 endif;
 
 /**
  * Preloader
  */
-function sydney_preloader() {
+function life_in_balance_preloader() {
 	?>
 	<div class="preloader">
 	    <div class="spinner">
@@ -324,12 +324,12 @@ function sydney_preloader() {
 	</div>
 	<?php
 }
-add_action('sydney_before_site', 'sydney_preloader');
+add_action('life_in_balance_before_site', 'life_in_balance_preloader');
 
 /**
  * Header clone
  */
-function sydney_header_clone() {
+function life_in_balance_header_clone() {
 
 	$front_header_type 	= get_theme_mod('front_header_type','nothing');
 	$site_header_type 	= get_theme_mod('site_header_type');
@@ -340,12 +340,12 @@ function sydney_header_clone() {
 
 	<?php }
 }
-add_action('sydney_before_header', 'sydney_header_clone');
+add_action('life_in_balance_before_header', 'life_in_balance_header_clone');
 
 /**
  * Get image alt
  */
-function sydney_get_image_alt( $image ) {
+function life_in_balance_get_image_alt( $image ) {
     global $wpdb;
 
     if( empty( $image ) ) {
@@ -370,21 +370,21 @@ function sydney_get_image_alt( $image ) {
  * 
  * @link https://git.io/vWdr2
  */
-function sydney_skip_link_focus_fix() {
+function life_in_balance_skip_link_focus_fix() {
 	?>
 	<script>
 	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
 	</script>
 	<?php
 }
-add_action( 'wp_print_footer_scripts', 'sydney_skip_link_focus_fix' );
+add_action( 'wp_print_footer_scripts', 'life_in_balance_skip_link_focus_fix' );
 
 /**
  * Get SVG code for specific theme icon
  */
-function sydney_get_svg_icon( $icon, $echo = false ) {
+function life_in_balance_get_svg_icon( $icon, $echo = false ) {
 	$svg_code = wp_kses( //From TwentTwenty. Keeps only allowed tags and attributes
-		Sydney_SVG_Icons::get_svg_icon( $icon ),
+		Life_In_Balance_SVG_Icons::get_svg_icon( $icon ),
 		array(
 			'svg'     => array(
 				'class'       => true,
@@ -468,7 +468,7 @@ require get_template_directory() . '/inc/woocommerce.php';
  * WPML
  */
 if ( class_exists( 'SitePress' ) ) {
-	require get_template_directory() . '/inc/wpml/class-sydney-wpml.php';
+	require get_template_directory() . '/inc/wpml/class-life_in_balance-wpml.php';
 }
 
 /**
@@ -489,15 +489,15 @@ require get_template_directory() . '/inc/fonts.php';
 /**
  * SVG codes
  */
-require get_template_directory() . '/inc/classes/class-sydney-svg-icons.php';
+require get_template_directory() . '/inc/classes/class-life_in_balance-svg-icons.php';
 
 /**
  *TGM Plugin activation.
  */
 require_once dirname( __FILE__ ) . '/plugins/class-tgm-plugin-activation.php';
 
-add_action( 'tgmpa_register', 'sydney_recommend_plugin' );
-function sydney_recommend_plugin() {
+add_action( 'tgmpa_register', 'life_in_balance_recommend_plugin' );
+function life_in_balance_recommend_plugin() {
 
 	$plugins = array();
 
@@ -511,8 +511,8 @@ function sydney_recommend_plugin() {
 
 	if ( !function_exists('wpcf_init') ) {
 	    $plugins[] = array(
-		        'name'               => 'Sydney Toolbox - custom posts and fields for the Sydney theme',
-		        'slug'               => 'sydney-toolbox',
+		        'name'               => 'Life_In_Balance Toolbox - custom posts and fields for the Life_In_Balance theme',
+		        'slug'               => 'life_in_balance-toolbox',
 		        'required'           => false,
 		);
 	}
@@ -526,19 +526,19 @@ function sydney_recommend_plugin() {
  */
 require get_template_directory() . '/inc/notices/persist-admin-notices-dismissal.php';
 
-function sydney_welcome_admin_notice() {
-	if ( ! PAnD::is_admin_notice_active( 'sydney-welcome-forever' ) ) {
+function life_in_balance_welcome_admin_notice() {
+	if ( ! PAnD::is_admin_notice_active( 'life_in_balance-welcome-forever' ) ) {
 		return;
 	}
 	
 	?>
-	<div data-dismissible="sydney-welcome-forever" class="sydney-admin-notice updated notice notice-success is-dismissible">
+	<div data-dismissible="life_in_balance-welcome-forever" class="life_in_balance-admin-notice updated notice notice-success is-dismissible">
 
-		<p><?php echo sprintf( __( 'Welcome to Sydney. To get started please make sure to visit our <a href="%s">welcome page</a>.', 'sydney' ), admin_url( 'themes.php?page=sydney-info.php' ) ); ?></p>
-		<a class="button" href="<?php echo admin_url( 'themes.php?page=sydney-info.php' ); ?>"><?php esc_html_e( 'Get started with Sydney', 'sydney' ); ?></a>
+		<p><?php echo sprintf( __( 'Welcome to Life_In_Balance. To get started please make sure to visit our <a href="%s">welcome page</a>.', 'life_in_balance' ), admin_url( 'themes.php?page=life_in_balance-info.php' ) ); ?></p>
+		<a class="button" href="<?php echo admin_url( 'themes.php?page=life_in_balance-info.php' ); ?>"><?php esc_html_e( 'Get started with Life_In_Balance', 'life_in_balance' ); ?></a>
 
 	</div>
 	<?php
 }
 add_action( 'admin_init', array( 'PAnD', 'init' ) );
-add_action( 'admin_notices', 'sydney_welcome_admin_notice' );
+add_action( 'admin_notices', 'life_in_balance_welcome_admin_notice' );

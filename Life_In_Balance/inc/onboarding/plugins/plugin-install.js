@@ -12,7 +12,7 @@ jQuery( document ).ready(
 
 			'handleInstall': function () {
 				var self = this;
-				$( 'body' ).on( 'click', '.sydney-install-plugin', function ( e ) {
+				$( 'body' ).on( 'click', '.life_in_balance-install-plugin', function ( e ) {
 					e.preventDefault();
 					var button = $( this );
 					var slug = button.attr( 'data-slug' );
@@ -24,7 +24,7 @@ jQuery( document ).ready(
 						{
 							slug: slug,
 							success: function () {
-								button.text( sydneyPluginInstall.activating + '...' );
+								button.text( life_in_balancePluginInstall.activating + '...' );
 								self.activatePlugin( url, redirect );
 							}
 						}
@@ -80,7 +80,7 @@ jQuery( document ).ready(
 					var url = button.attr( 'href' );
 					var redirect = button.attr( 'data-redirect' );
 					button.addClass( 'updating-message' );
-					button.text( sydneyPluginInstall.activating + '...' );
+					button.text( life_in_balancePluginInstall.activating + '...' );
 					self.activatePlugin( url, redirect );
 				} );
 			},

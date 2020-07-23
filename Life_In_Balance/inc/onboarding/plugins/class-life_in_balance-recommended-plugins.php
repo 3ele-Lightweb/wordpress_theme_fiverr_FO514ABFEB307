@@ -5,7 +5,7 @@
  */
 
 
-class Sydney_Recommended_Plugins {
+class Life_In_Balance_Recommended_Plugins {
 	/**
 	 * Instance of class.
 	 *
@@ -19,7 +19,7 @@ class Sydney_Recommended_Plugins {
 	 */
 	public static function instance() {
 		if ( ! isset( self::$instance ) && ! ( self::$instance instanceof Main ) ) {
-			self::$instance = new Sydney_Recommended_Plugins();
+			self::$instance = new Life_In_Balance_Recommended_Plugins();
 		}
 
 		return self::$instance;
@@ -85,11 +85,11 @@ class Sydney_Recommended_Plugins {
 		);
 		switch ( $state ) {
 			case 'install':
-				$button .= '<a data-redirect="' . esc_url( $redirect ) . '" data-slug="' . esc_attr( $slug ) . '" class="install-now sydney-install-plugin button  " href="' . esc_url( $nonce ) . '" data-name="' . esc_attr( $slug ) . '" aria-label="Install ' . esc_attr( $slug ) . '">' . __( 'Install and activate', 'sydney' ) . '</a>';
+				$button .= '<a data-redirect="' . esc_url( $redirect ) . '" data-slug="' . esc_attr( $slug ) . '" class="install-now life_in_balance-install-plugin button  " href="' . esc_url( $nonce ) . '" data-name="' . esc_attr( $slug ) . '" aria-label="Install ' . esc_attr( $slug ) . '">' . __( 'Install and activate', 'life_in_balance' ) . '</a>';
 				break;
 
 			case 'activate':
-				$button .= '<a  data-redirect="' . esc_url( $redirect ) . '" data-slug="' . esc_attr( $slug ) . '" class="activate-now button button-primary" href="' . esc_url( $nonce ) . '" aria-label="Activate ' . esc_attr( $slug ) . '">' . esc_html__( 'Activate', 'sydney' ) . '</a>';
+				$button .= '<a  data-redirect="' . esc_url( $redirect ) . '" data-slug="' . esc_attr( $slug ) . '" class="activate-now button button-primary" href="' . esc_url( $nonce ) . '" aria-label="Activate ' . esc_attr( $slug ) . '">' . esc_html__( 'Activate', 'life_in_balance' ) . '</a>';
 				break;
 
 			case 'deactivate':
@@ -104,12 +104,12 @@ class Sydney_Recommended_Plugins {
 					esc_url( network_admin_url( 'plugins.php' ) )
 				);
 
-				$button .= '<a  data-redirect="' . esc_url( $redirect ) . '" data-slug="' . esc_attr( $slug ) . '" class="deactivate-now button" href="' . esc_url( $nonce ) . '" data-name="' . esc_attr( $slug ) . '" aria-label="Deactivate ' . esc_attr( $slug ) . '">' . esc_html__( 'Deactivate', 'sydney' ) . '</a>';
+				$button .= '<a  data-redirect="' . esc_url( $redirect ) . '" data-slug="' . esc_attr( $slug ) . '" class="deactivate-now button" href="' . esc_url( $nonce ) . '" data-name="' . esc_attr( $slug ) . '" aria-label="Deactivate ' . esc_attr( $slug ) . '">' . esc_html__( 'Deactivate', 'life_in_balance' ) . '</a>';
 				break;
 
 			case 'enable_cpt':
 				$url     = esc_url( admin_url( 'admin.php?page=jetpack#/settings' ) );
-				$button .= '<a  data-redirect="' . esc_url( $redirect ) . '" class="button" href="' . esc_url( $url ) . '">' . esc_html__( 'Activate', 'sydney' ) . ' ' . esc_html__( 'Jetpack Portfolio', 'sydney' ) . '</a>';
+				$button .= '<a  data-redirect="' . esc_url( $redirect ) . '" class="button" href="' . esc_url( $url ) . '">' . esc_html__( 'Activate', 'life_in_balance' ) . ' ' . esc_html__( 'Jetpack Portfolio', 'life_in_balance' ) . '</a>';
 				break;
 			default:
 				break;
@@ -146,20 +146,20 @@ class Sydney_Recommended_Plugins {
 	 * Enqueue Function.
 	 */
 	public function enqueue_scripts() {
-		wp_register_script( 'sydney-plugin-install', get_template_directory_uri() . '/inc/onboarding/plugins/plugin-install.js', array( 'jquery' ), '', true );
+		wp_register_script( 'life_in_balance-plugin-install', get_template_directory_uri() . '/inc/onboarding/plugins/plugin-install.js', array( 'jquery' ), '', true );
 
 		wp_localize_script(
-			'sydney-plugin-install',
-			'sydneyPluginInstall',
+			'life_in_balance-plugin-install',
+			'life_in_balancePluginInstall',
 			array(
-				'activating' => esc_html__( 'Activating ', 'sydney' ),
+				'activating' => esc_html__( 'Activating ', 'life_in_balance' ),
 			)
 		);
 
 		wp_enqueue_script( 'plugin-install' );
 		wp_enqueue_script( 'updates' );
-		wp_enqueue_script( 'sydney-plugin-install' );
+		wp_enqueue_script( 'life_in_balance-plugin-install' );
 	}
 }
 
-$admin = new Sydney_Recommended_Plugins();
+$admin = new Life_In_Balance_Recommended_Plugins();

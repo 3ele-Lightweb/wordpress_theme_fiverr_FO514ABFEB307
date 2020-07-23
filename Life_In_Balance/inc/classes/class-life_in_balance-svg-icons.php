@@ -1,15 +1,15 @@
 <?php
 /**
- * SVG icons used in Sydney
+ * SVG icons used in Life_In_Balance
  *
- * @package Sydney
+ * @package Life_In_Balance
  */
 
-if ( ! class_exists( 'Sydney_SVG_Icons' ) ) {
+if ( ! class_exists( 'Life_In_Balance_SVG_Icons' ) ) {
 	/**
 	 * Get a svg icon
 	 */
-	class Sydney_SVG_Icons {
+	class Life_In_Balance_SVG_Icons {
 
 		public static function get_svg_icon( $icon ) {
 			$icons = self::$svg_icons;

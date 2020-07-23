@@ -52,17 +52,17 @@ if ( ! class_exists( 'PAnD' ) ) {
 		 */
 		public static function load_script() {
 			wp_enqueue_script(
-				'sydney-dismissible-notices',
+				'life_in_balance-dismissible-notices',
 				get_template_directory_uri() . '/inc/notices/dismiss-notice.js',
 				array( 'jquery', 'common' ),
 				false,
 				true
 			);
 
-			wp_enqueue_style( 'sydney-dismissible-notices-styles', get_template_directory_uri() . '/inc/notices/persistent.css' );
+			wp_enqueue_style( 'life_in_balance-dismissible-notices-styles', get_template_directory_uri() . '/inc/notices/persistent.css' );
 
 			wp_localize_script(
-				'sydney-dismissible-notices',
+				'life_in_balance-dismissible-notices',
 				'dismissible_notice',
 				array(
 					'nonce' => wp_create_nonce( 'dismissible-notice' ),

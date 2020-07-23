@@ -2,24 +2,24 @@
 /**
  * Slider template
  *
- * @package Sydney
+ * @package Life_In_Balance
  */
 
 //Slider template
-if ( ! function_exists( 'sydney_slider_template' ) ) :
-function sydney_slider_template() {
+if ( ! function_exists( 'life_in_balance_slider_template' ) ) :
+function life_in_balance_slider_template() {
 
     if ( (get_theme_mod('front_header_type','nothing') == 'slider' && is_front_page()) || (get_theme_mod('site_header_type') == 'slider' && !is_front_page()) ) {
 
     //Get the slider options
     $text_slide = get_theme_mod('textslider_slide', 0);
-    $button     = sydney_slider_button();
+    $button     = life_in_balance_slider_button();
     $mobile_slider = get_theme_mod('mobile_slider', 'responsive');
 
     //Slider text
     if ( !function_exists('pll_register_string') ) {
     	$titles = array(
-    		'slider_title_1' => get_theme_mod('slider_title_1', 'Welcome to Sydney'),
+    		'slider_title_1' => get_theme_mod('slider_title_1', 'Welcome to Life_In_Balance'),
     		'slider_title_2' => get_theme_mod('slider_title_2', 'Ready to begin your journey?'),
     		'slider_title_3' => get_theme_mod('slider_title_3'),
     		'slider_title_4' => get_theme_mod('slider_title_4'),
@@ -76,7 +76,7 @@ function sydney_slider_template() {
         <?php foreach ( $images as $image ) {
         	if ( $image ) {
 
-                $image_alt = sydney_get_image_alt( $image );
+                $image_alt = life_in_balance_get_image_alt( $image );
         		?>
                 <div class="slide-item slide-item-<?php echo $c; ?>" style="background-image:url('<?php echo esc_url( $image ); ?>');">
                     <img class="mobile-slide preserve" src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr( $image_alt ); ?>"/>
@@ -96,7 +96,7 @@ function sydney_slider_template() {
 
         </div>  
         <?php if ( $text_slide ) : ?>
-            <?php echo sydney_stop_text(); ?>
+            <?php echo life_in_balance_stop_text(); ?>
         <?php endif; ?>
     </div>
 
@@ -105,7 +105,7 @@ function sydney_slider_template() {
 }
 endif;
 
-function sydney_slider_button() {
+function life_in_balance_slider_button() {
 
     if ( !function_exists('pll_register_string') ) {
         $slider_button      = get_theme_mod('slider_button_text', 'Click to begin');
@@ -121,13 +121,13 @@ function sydney_slider_button() {
 
 }
 
-function sydney_stop_text() {
+function life_in_balance_stop_text() {
 
     if ( !function_exists('pll_register_string') ) {
-        $slider_title_1     = get_theme_mod('slider_title_1', 'Welcome to Sydney');
+        $slider_title_1     = get_theme_mod('slider_title_1', 'Welcome to Life_In_Balance');
         $slider_subtitle_1  = get_theme_mod('slider_subtitle_1','Feel free to look around');
     } else {
-        $slider_title_1     = pll__(get_theme_mod('slider_title_1', 'Welcome to Sydney'));
+        $slider_title_1     = pll__(get_theme_mod('slider_title_1', 'Welcome to Life_In_Balance'));
         $slider_subtitle_1  = pll__(get_theme_mod('slider_subtitle_1','Feel free to look around')); 
     }
 
@@ -137,7 +137,7 @@ function sydney_stop_text() {
             <h2 class="maintitle"><?php echo esc_html($slider_title_1); ?></h2>
             <p class="subtitle"><?php echo esc_html($slider_subtitle_1); ?></p>
         </div>
-        <?php echo sydney_slider_button(); ?>
+        <?php echo life_in_balance_slider_button(); ?>
     </div>   
     <?php 
 }

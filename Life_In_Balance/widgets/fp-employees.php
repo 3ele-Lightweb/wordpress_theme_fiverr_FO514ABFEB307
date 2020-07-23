@@ -1,11 +1,11 @@
 <?php
 
-class Sydney_Employees extends WP_Widget {
+class Life_In_Balance_Employees extends WP_Widget {
 
 	public function __construct() {
-		$widget_ops = array('classname' => 'sydney_employees_widget', 'description' => __( 'Display your team members in a stylish way.', 'sydney') );
-        parent::__construct(false, $name = __('Sydney FP: Employees', 'sydney'), $widget_ops);
-		$this->alt_option_name = 'sydney_employees_widget';
+		$widget_ops = array('classname' => 'life_in_balance_employees_widget', 'description' => __( 'Display your team members in a stylish way.', 'life_in_balance') );
+        parent::__construct(false, $name = __('Life_In_Balance FP: Employees', 'life_in_balance'), $widget_ops);
+		$this->alt_option_name = 'life_in_balance_employees_widget';
 
     }
 
@@ -18,21 +18,21 @@ class Sydney_Employees extends WP_Widget {
 		$center_content	= isset( $instance['center_content'] ) ? (bool) $instance['center_content'] : false;	
 	?>
 
-	<p><?php _e('In order to display this widget, you must first add some employees from the dashboard. Add as many as you want and the theme will automatically display them all.', 'sydney'); ?></p>
+	<p><?php _e('In order to display this widget, you must first add some employees from the dashboard. Add as many as you want and the theme will automatically display them all.', 'life_in_balance'); ?></p>
 	<p>
-	<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'sydney'); ?></label>
+	<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'life_in_balance'); ?></label>
 	<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
 	</p>
-	<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of employees to show (-1 shows all of them):', 'sydney' ); ?></label>
+	<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of employees to show (-1 shows all of them):', 'life_in_balance' ); ?></label>
 	<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3" /></p>
-    <p><label for="<?php echo $this->get_field_id('see_all'); ?>"><?php _e('Enter an URL here if you want to section to link somewhere.', 'sydney'); ?></label>
+    <p><label for="<?php echo $this->get_field_id('see_all'); ?>"><?php _e('Enter an URL here if you want to section to link somewhere.', 'life_in_balance'); ?></label>
 	<input class="widefat custom_media_url" id="<?php echo $this->get_field_id( 'see_all' ); ?>" name="<?php echo $this->get_field_name( 'see_all' ); ?>" type="text" value="<?php echo $see_all; ?>" size="3" /></p>	
-    <p><label for="<?php echo $this->get_field_id('see_all_text'); ?>"><?php _e('The text for the button [Defaults to <em>See all our employees</em> if left empty]', 'sydney'); ?></label>
+    <p><label for="<?php echo $this->get_field_id('see_all_text'); ?>"><?php _e('The text for the button [Defaults to <em>See all our employees</em> if left empty]', 'life_in_balance'); ?></label>
 	<input class="widefat custom_media_url" id="<?php echo $this->get_field_id( 'see_all_text' ); ?>" name="<?php echo $this->get_field_name( 'see_all_text' ); ?>" type="text" value="<?php echo $see_all_text; ?>" size="3" /></p>			
-	<p><label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php _e( 'Enter the slug for your category or leave empty to show all employees.', 'sydney' ); ?></label>
+	<p><label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php _e( 'Enter the slug for your category or leave empty to show all employees.', 'life_in_balance' ); ?></label>
 	<input class="widefat" id="<?php echo $this->get_field_id( 'category' ); ?>" name="<?php echo $this->get_field_name( 'category' ); ?>" type="text" value="<?php echo $category; ?>" size="3" /></p>
 	<p><input class="checkbox" type="checkbox" <?php checked( $center_content ); ?> id="<?php echo $this->get_field_id( 'center_content' ); ?>" name="<?php echo $this->get_field_name( 'center_content' ); ?>" />
-	<label for="<?php echo $this->get_field_id( 'center_content' ); ?>"><?php _e( 'Center the employees? (use only if you have 1 or 2 employees)', 'sydney' ); ?></label></p>
+	<label for="<?php echo $this->get_field_id( 'center_content' ); ?>"><?php _e( 'Center the employees? (use only if you have 1 or 2 employees)', 'life_in_balance' ); ?></label></p>
 	
 	<?php
 	}
@@ -113,7 +113,7 @@ class Sydney_Employees extends WP_Widget {
 			        </div>
 					<?php if ( has_post_thumbnail() ) : ?>
 					<div class="avatar">
-						<?php the_post_thumbnail('sydney-medium-thumb'); ?>
+						<?php the_post_thumbnail('life_in_balance-medium-thumb'); ?>
 					</div>
 					<?php endif; ?>
 			    </div>
@@ -137,7 +137,7 @@ class Sydney_Employees extends WP_Widget {
 				<?php if ($see_all_text) : ?>
 					<?php echo $see_all_text; ?>
 				<?php else : ?>
-					<?php echo __('See all our employees', 'sydney'); ?>
+					<?php echo __('See all our employees', 'life_in_balance'); ?>
 				<?php endif; ?>
 			</a>
 		<?php endif; ?>	

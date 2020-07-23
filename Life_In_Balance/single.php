@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * @package Sydney
+ * @package Life_In_Balance
  */
 
 get_header(); ?>
@@ -13,11 +13,11 @@ get_header(); ?>
 		$fullwidth = '';
 	} ?>
 
-	<?php do_action('sydney_before_content'); ?>
+	<?php do_action('life_in_balance_before_content'); ?>
 
 	<div id="primary" class="content-area col-md-9 <?php echo $fullwidth; ?>">
 
-		<?php sydney_yoast_seo_breadcrumbs(); ?>
+		<?php life_in_balance_yoast_seo_breadcrumbs(); ?>
 
 		<main id="main" class="post-wrap" role="main">
 
@@ -25,7 +25,7 @@ get_header(); ?>
 
 			<?php get_template_part( 'content', 'single' ); ?>
 
-			<?php sydney_post_navigation(); ?>
+			<?php life_in_balance_post_navigation(); ?>
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template
@@ -39,7 +39,7 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-	<?php do_action('sydney_after_content'); ?>
+	<?php do_action('life_in_balance_after_content'); ?>
 
 <?php if ( get_theme_mod('fullwidth_single', 0) != 1 ) {
 	get_sidebar();

@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Sydney
+ * @package Life_In_Balance
  */
 
 if ( ! function_exists( 'the_posts_navigation' ) ) :
@@ -20,15 +20,15 @@ function the_posts_navigation() {
 	}
 	?>
 	<nav class="navigation posts-navigation" role="navigation">
-		<h2 class="screen-reader-text"><?php _e( 'Posts navigation', 'sydney' ); ?></h2>
+		<h2 class="screen-reader-text"><?php _e( 'Posts navigation', 'life_in_balance' ); ?></h2>
 		<div class="nav-links clearfix">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( 'Older posts', 'sydney' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( 'Older posts', 'life_in_balance' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'sydney' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'life_in_balance' ) ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -37,8 +37,8 @@ function the_posts_navigation() {
 }
 endif;
 
-if ( ! function_exists( 'sydney_post_navigation' ) ) :
-function sydney_post_navigation() {
+if ( ! function_exists( 'life_in_balance_post_navigation' ) ) :
+function life_in_balance_post_navigation() {
 	// Don't print empty markup if there's nowhere to navigate.
 	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 	$next     = get_adjacent_post( false, '', false );
@@ -48,7 +48,7 @@ function sydney_post_navigation() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h2 class="screen-reader-text"><?php _e( 'Post navigation', 'sydney' ); ?></h2>
+		<h2 class="screen-reader-text"><?php _e( 'Post navigation', 'life_in_balance' ); ?></h2>
 		<div class="nav-links clearfix">
 			<?php
 				previous_post_link( '<div class="nav-previous"><span>&#10229;</span>%link</div>', '%title' );
@@ -60,11 +60,11 @@ function sydney_post_navigation() {
 }
 endif;
 
-if ( ! function_exists( 'sydney_posted_on' ) ) :
+if ( ! function_exists( 'life_in_balance_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-function sydney_posted_on() {
+function life_in_balance_posted_on() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -78,7 +78,7 @@ function sydney_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		_x( 'Posted %s', 'post date', 'sydney' ),
+		_x( 'Posted %s', 'post date', 'life_in_balance' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
@@ -87,26 +87,26 @@ function sydney_posted_on() {
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	echo '<span class="posted-on"><i class="sydney-svg-icon">' . sydney_get_svg_icon( 'icon-calendar', false ) . '</i>' . $posted_on . '</span><span class="byline"> ' . '<i class="sydney-svg-icon">' . sydney_get_svg_icon( 'icon-user', false ) . '</i>' . $byline . '</span>';
+	echo '<span class="posted-on"><i class="life_in_balance-svg-icon">' . life_in_balance_get_svg_icon( 'icon-calendar', false ) . '</i>' . $posted_on . '</span><span class="byline"> ' . '<i class="life_in_balance-svg-icon">' . life_in_balance_get_svg_icon( 'icon-user', false ) . '</i>' . $byline . '</span>';
 	
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link"><i class="sydney-svg-icon">' . sydney_get_svg_icon( 'icon-comments', false ) . '</i>';
-		comments_popup_link( __( 'Leave a comment', 'sydney' ), __( '1 Comment', 'sydney' ), __( '% Comments', 'sydney' ) );
+		echo '<span class="comments-link"><i class="life_in_balance-svg-icon">' . life_in_balance_get_svg_icon( 'icon-comments', false ) . '</i>';
+		comments_popup_link( __( 'Leave a comment', 'life_in_balance' ), __( '1 Comment', 'life_in_balance' ), __( '% Comments', 'life_in_balance' ) );
 		echo '</span>';
 	}
 
-	$categories_list = get_the_category_list( __( ', ', 'sydney' ) );
-	if ( !is_single() && $categories_list && sydney_categorized_blog() ) {
-		printf( '<span class="cat-links"><i class="sydney-svg-icon">' . sydney_get_svg_icon( 'icon-categories', false ) . '</i>' . __( 'Posted in %1$s', 'sydney' ) . '</span>', $categories_list );
+	$categories_list = get_the_category_list( __( ', ', 'life_in_balance' ) );
+	if ( !is_single() && $categories_list && life_in_balance_categorized_blog() ) {
+		printf( '<span class="cat-links"><i class="life_in_balance-svg-icon">' . life_in_balance_get_svg_icon( 'icon-categories', false ) . '</i>' . __( 'Posted in %1$s', 'life_in_balance' ) . '</span>', $categories_list );
 	}
 }
 endif;
 
-if ( ! function_exists( 'sydney_entry_footer' ) ) :
+if ( ! function_exists( 'life_in_balance_entry_footer' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  */
-function sydney_entry_footer() {
+function life_in_balance_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
@@ -115,7 +115,7 @@ function sydney_entry_footer() {
 			printf( '<span class="tags-links">' . '%1$s' . '</span>', $tags_list );
 		}
 	}
-	edit_post_link( __( 'Edit', 'sydney' ), '<span class="edit-link">', '</span>' );
+	edit_post_link( __( 'Edit', 'life_in_balance' ), '<span class="edit-link">', '</span>' );
 }
 endif;
 
@@ -132,45 +132,45 @@ if ( ! function_exists( 'the_archive_title' ) ) :
  */
 function the_archive_title( $before = '', $after = '' ) {
 	if ( is_category() ) {
-		$title = sprintf( __( 'Category: %s', 'sydney' ), single_cat_title( '', false ) );
+		$title = sprintf( __( 'Category: %s', 'life_in_balance' ), single_cat_title( '', false ) );
 	} elseif ( is_tag() ) {
-		$title = sprintf( __( 'Tag: %s', 'sydney' ), single_tag_title( '', false ) );
+		$title = sprintf( __( 'Tag: %s', 'life_in_balance' ), single_tag_title( '', false ) );
 	} elseif ( is_author() ) {
-		$title = sprintf( __( 'Author: %s', 'sydney' ), '<span class="vcard">' . get_the_author() . '</span>' );
+		$title = sprintf( __( 'Author: %s', 'life_in_balance' ), '<span class="vcard">' . get_the_author() . '</span>' );
 	} elseif ( is_year() ) {
-		$title = sprintf( __( 'Year: %s', 'sydney' ), get_the_date( _x( 'Y', 'yearly archives date format', 'sydney' ) ) );
+		$title = sprintf( __( 'Year: %s', 'life_in_balance' ), get_the_date( _x( 'Y', 'yearly archives date format', 'life_in_balance' ) ) );
 	} elseif ( is_month() ) {
-		$title = sprintf( __( 'Month: %s', 'sydney' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'sydney' ) ) );
+		$title = sprintf( __( 'Month: %s', 'life_in_balance' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'life_in_balance' ) ) );
 	} elseif ( is_day() ) {
-		$title = sprintf( __( 'Day: %s', 'sydney' ), get_the_date( _x( 'F j, Y', 'daily archives date format', 'sydney' ) ) );
+		$title = sprintf( __( 'Day: %s', 'life_in_balance' ), get_the_date( _x( 'F j, Y', 'daily archives date format', 'life_in_balance' ) ) );
 	} elseif ( is_tax( 'post_format' ) ) {
 		if ( is_tax( 'post_format', 'post-format-aside' ) ) {
-			$title = _x( 'Asides', 'post format archive title', 'sydney' );
+			$title = _x( 'Asides', 'post format archive title', 'life_in_balance' );
 		} elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) {
-			$title = _x( 'Galleries', 'post format archive title', 'sydney' );
+			$title = _x( 'Galleries', 'post format archive title', 'life_in_balance' );
 		} elseif ( is_tax( 'post_format', 'post-format-image' ) ) {
-			$title = _x( 'Images', 'post format archive title', 'sydney' );
+			$title = _x( 'Images', 'post format archive title', 'life_in_balance' );
 		} elseif ( is_tax( 'post_format', 'post-format-video' ) ) {
-			$title = _x( 'Videos', 'post format archive title', 'sydney' );
+			$title = _x( 'Videos', 'post format archive title', 'life_in_balance' );
 		} elseif ( is_tax( 'post_format', 'post-format-quote' ) ) {
-			$title = _x( 'Quotes', 'post format archive title', 'sydney' );
+			$title = _x( 'Quotes', 'post format archive title', 'life_in_balance' );
 		} elseif ( is_tax( 'post_format', 'post-format-link' ) ) {
-			$title = _x( 'Links', 'post format archive title', 'sydney' );
+			$title = _x( 'Links', 'post format archive title', 'life_in_balance' );
 		} elseif ( is_tax( 'post_format', 'post-format-status' ) ) {
-			$title = _x( 'Statuses', 'post format archive title', 'sydney' );
+			$title = _x( 'Statuses', 'post format archive title', 'life_in_balance' );
 		} elseif ( is_tax( 'post_format', 'post-format-audio' ) ) {
-			$title = _x( 'Audio', 'post format archive title', 'sydney' );
+			$title = _x( 'Audio', 'post format archive title', 'life_in_balance' );
 		} elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
-			$title = _x( 'Chats', 'post format archive title', 'sydney' );
+			$title = _x( 'Chats', 'post format archive title', 'life_in_balance' );
 		}
 	} elseif ( is_post_type_archive() ) {
-		$title = sprintf( __( 'Archives: %s', 'sydney' ), post_type_archive_title( '', false ) );
+		$title = sprintf( __( 'Archives: %s', 'life_in_balance' ), post_type_archive_title( '', false ) );
 	} elseif ( is_tax() ) {
 		$tax = get_taxonomy( get_queried_object()->taxonomy );
 		/* translators: 1: Taxonomy singular name, 2: Current taxonomy term */
-		$title = sprintf( __( '%1$s: %2$s', 'sydney' ), $tax->labels->singular_name, single_term_title( '', false ) );
+		$title = sprintf( __( '%1$s: %2$s', 'life_in_balance' ), $tax->labels->singular_name, single_term_title( '', false ) );
 	} else {
-		$title = __( 'Archives', 'sydney' );
+		$title = __( 'Archives', 'life_in_balance' );
 	}
 
 	/**
@@ -218,8 +218,8 @@ endif;
  *
  * @return bool
  */
-function sydney_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'sydney_categories' ) ) ) {
+function life_in_balance_categorized_blog() {
+	if ( false === ( $all_the_cool_cats = get_transient( 'life_in_balance_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
 			'fields'     => 'ids',
@@ -232,35 +232,35 @@ function sydney_categorized_blog() {
 		// Count the number of categories that are attached to the posts.
 		$all_the_cool_cats = count( $all_the_cool_cats );
 
-		set_transient( 'sydney_categories', $all_the_cool_cats );
+		set_transient( 'life_in_balance_categories', $all_the_cool_cats );
 	}
 
 	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so sydney_categorized_blog should return true.
+		// This blog has more than 1 category so life_in_balance_categorized_blog should return true.
 		return true;
 	} else {
-		// This blog has only 1 category so sydney_categorized_blog should return false.
+		// This blog has only 1 category so life_in_balance_categorized_blog should return false.
 		return false;
 	}
 }
 
 /**
- * Flush out the transients used in sydney_categorized_blog.
+ * Flush out the transients used in life_in_balance_categorized_blog.
  */
-function sydney_category_transient_flusher() {
+function life_in_balance_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return;
 	}
 	// Like, beat it. Dig?
-	delete_transient( 'sydney_categories' );
+	delete_transient( 'life_in_balance_categories' );
 }
-add_action( 'edit_category', 'sydney_category_transient_flusher' );
-add_action( 'save_post',     'sydney_category_transient_flusher' );
+add_action( 'edit_category', 'life_in_balance_category_transient_flusher' );
+add_action( 'save_post',     'life_in_balance_category_transient_flusher' );
 
 /**
  * Post date
  */
-function sydney_post_date( $notext = false ) {
+function life_in_balance_post_date( $notext = false ) {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -274,7 +274,7 @@ function sydney_post_date( $notext = false ) {
 	if ( $notext == false ) {
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'sydney' ),
+			esc_html_x( 'Posted on %s', 'post date', 'life_in_balance' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 	} else {
@@ -287,7 +287,7 @@ function sydney_post_date( $notext = false ) {
 /**
  * First category
  */
-function sydney_get_first_cat() {
+function life_in_balance_get_first_cat() {
 	if ( 'post' === get_post_type() ) {
 		$cats = get_the_category();
 		echo '<a href="' . esc_url( get_category_link( $cats[0]->term_id ) ) . '" title="' . esc_attr( $cats[0]->name ) . '" class="post-cat">' . esc_html( $cats[0]->name ) . '</a>';
@@ -297,9 +297,9 @@ function sydney_get_first_cat() {
 /**
  * Get all post categories
  */
-function sydney_all_cats() {
+function life_in_balance_all_cats() {
 	$categories = get_the_category();
-	if ( $categories && sydney_categorized_blog() ) {
+	if ( $categories && life_in_balance_categorized_blog() ) {
 		foreach ($categories as $cat) {
 			echo '<a href="' . esc_url( get_category_link( $cat->term_id ) ) . '" title="' . esc_attr( $cat->name ) . '" class="post-cat">' . esc_html( $cat->name ) . '</a>';
 		}

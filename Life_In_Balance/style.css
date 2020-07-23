@@ -1,20 +1,20 @@
 /*
-Theme Name: Sydney
-Theme URI: https://athemes.com/theme/sydney
+Theme Name: Life_In_Balance
+Theme URI: https://athemes.com/theme/life_in_balance
 Author: aThemes
 Author URI: https://athemes.com
-Description: Sydney is a powerful business theme that provides a fast way for companies or freelancers to create an awesome online presence. As well as being fully compatible with Elementor, Sydney brings plenty of customization possibilities like access to all Google Fonts, full color control, layout control, logo upload, full screen slider, header image, sticky navigation and much more. Also, Sydney provides all the construction blocks you need to rapidly create an engaging front page.
+Description: Life_In_Balance is a powerful business theme that provides a fast way for companies or freelancers to create an awesome online presence. As well as being fully compatible with Elementor, Life_In_Balance brings plenty of customization possibilities like access to all Google Fonts, full color control, layout control, logo upload, full screen slider, header image, sticky navigation and much more. Also, Life_In_Balance provides all the construction blocks you need to rapidly create an engaging front page.
 Version: 1.64
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tested up to: 5.4
 Requires PHP: 5.6
-Text Domain: sydney
+Text Domain: life_in_balance
 Tags: two-columns, right-sidebar, custom-colors, custom-background, custom-header, custom-menu, featured-images, sticky-post, theme-options, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
-Sydney is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Life_In_Balance is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 */
 
 /*--------------------------------------------------------------
@@ -2074,10 +2074,10 @@ Panels
 	.service {
 		margin-bottom: 30px;
 	}
-	.widget_sydney_services_type_b .service {
+	.widget_life_in_balance_services_type_b .service {
 		margin-bottom: 20px;
 	}
-	.widget_sydney_services_type_b .service-thumb {
+	.widget_life_in_balance_services_type_b .service-thumb {
 		float: left;
 		max-width: 120px;
     	margin-right: 30px;
@@ -2137,11 +2137,11 @@ Panels
 /* Contact widget
 -------------------------------------------------------------- */
 
-.sydney_contact_info_widget span {
+.life_in_balance_contact_info_widget span {
 	color: #d65050;
 	margin-right: 15px;
 }
-.sydney_contact_info_widget div {
+.life_in_balance_contact_info_widget div {
 	margin-bottom: 15px;
 }
 /* Icon List
@@ -2607,7 +2607,7 @@ Panels
 	       -o-transition: background 0.3s;
 	          transition: background 0.3s;
 	}
-	.widget_sydney_testimonials .fa {
+	.widget_life_in_balance_testimonials .fa {
 		display: none;
 	}
 
@@ -3223,19 +3223,19 @@ ol.flex-control-nav.flex-control-thumbs li img:not(.flex-active) {
 
 /* Lightbox video
 -------------------------------------------------------------- */
-.sydney-video .video-text,
-.sydney-video .toggle-popup, 
-.sydney-video .close-popup {
+.life_in_balance-video .video-text,
+.life_in_balance-video .toggle-popup, 
+.life_in_balance-video .close-popup {
 	display: none;
 }
-.sydney-video.vid-lightbox .video-text {
+.life_in_balance-video.vid-lightbox .video-text {
 	display: block;
 	margin-bottom: 30px;
 }
-.sydney-video.vid-lightbox .video-text:empty {
+.life_in_balance-video.vid-lightbox .video-text:empty {
 	margin-bottom: 0;
 }
-.sydney-video.vid-lightbox .popup-show .close-popup {
+.life_in_balance-video.vid-lightbox .popup-show .close-popup {
     display: block;
     position: absolute;
     top: -30px;
@@ -3245,7 +3245,7 @@ ol.flex-control-nav.flex-control-thumbs li img:not(.flex-active) {
     cursor: pointer;
     color: #fff;
 }
-.sydney-video.vid-lightbox .sydney-video-inner {
+.life_in_balance-video.vid-lightbox .life_in_balance-video-inner {
 	max-width: 720px;
 	margin: 0 auto;
 	position: relative;
@@ -3254,7 +3254,7 @@ ol.flex-control-nav.flex-control-thumbs li img:not(.flex-active) {
 	    -ms-transform: translateY(-50%);
 	        transform: translateY(-50%);
 }
-.sydney-video.vid-lightbox .video-overlay {
+.life_in_balance-video.vid-lightbox .video-overlay {
 	position: fixed;
 	top: 0;
 	left: -9999em;
@@ -3263,13 +3263,13 @@ ol.flex-control-nav.flex-control-thumbs li img:not(.flex-active) {
 	z-index: 9998;
 	background-color: rgba(0, 0, 0, 0.3);
 }
-.sydney-video.vid-lightbox .popup-show {
+.life_in_balance-video.vid-lightbox .popup-show {
 	left: 0;
 }
-.sydney-video.vid-lightbox {
+.life_in_balance-video.vid-lightbox {
 	text-align: center;
 }
-.sydney-video.vid-lightbox .toggle-popup {
+.life_in_balance-video.vid-lightbox .toggle-popup {
     width: 60px;
     height: 60px;
     display: table;
@@ -3282,7 +3282,7 @@ ol.flex-control-nav.flex-control-thumbs li img:not(.flex-active) {
     color: #46444c;
     transition: all 0.4s;
 }
-.sydney-video.vid-lightbox .toggle-popup:hover {
+.life_in_balance-video.vid-lightbox .toggle-popup:hover {
 	background-color: #46444c;
 	color: #fff;
 }
@@ -3314,7 +3314,7 @@ _:-ms-lang(x), .elementor-section, .panel-row-style { transform: none !important
 /* End parallax fix */
 
 .fl-widget .widgettitle,
-div[class*="elementor-widget-wp-widget-sydney"] h5 {
+div[class*="elementor-widget-wp-widget-life_in_balance"] h5 {
 	text-align: center;
 	margin-bottom: 50px;
 	position: relative;
@@ -3333,17 +3333,17 @@ div[class*="elementor-widget-wp-widget-sydney"] h5 {
 	width: 100%;
 }
 /* Yoast SEO breadcrumbs */
-.sydney-breadcrumbs {
+.life_in_balance-breadcrumbs {
     background-color: #f7f7f7;
     padding: 15px;
     margin-bottom: 30px;
     margin-right: 20px;
 }
-.sydney-breadcrumbs,
-.sydney-breadcrumbs a {
+.life_in_balance-breadcrumbs,
+.life_in_balance-breadcrumbs a {
 	color: #47425d;
 }
-.sydney-breadcrumbs a {
+.life_in_balance-breadcrumbs a {
     text-decoration: underline;
     margin: 0 3px;
     text-decoration-color: #bababa;	
@@ -3352,7 +3352,7 @@ div[class*="elementor-widget-wp-widget-sydney"] h5 {
 /*--------------------------------------------------------------
 SVGs
 --------------------------------------------------------------*/
-.sydney-svg-icon {
+.life_in_balance-svg-icon {
 	display: inline-block;
 	width: 16px;
 	height: 16px;
@@ -3365,19 +3365,19 @@ SVGs
 .go-top:hover svg {
 	fill: #d65050;
 }
-.meta-post .sydney-svg-icon {
+.meta-post .life_in_balance-svg-icon {
 	position: absolute;
 	top: 2px;
 	left: 0;
 	width: 14px;
 }
-.posted-on .sydney-svg-icon {
+.posted-on .life_in_balance-svg-icon {
 	top: -1px;
 }
-.single-meta .sydney-svg-icon {
+.single-meta .life_in_balance-svg-icon {
 	fill: #68647a;
 }
-.single-meta .sydney-svg-icon {
+.single-meta .life_in_balance-svg-icon {
 	width: 14px;
 	height: 20px;
 	margin-right: 7px;
@@ -3385,7 +3385,7 @@ SVGs
 .wp-custom-header button {
 	fill: #fff;
 }
-.btn-menu .sydney-svg-icon {
+.btn-menu .life_in_balance-svg-icon {
 	width: 22px;
 	fill: #fff;
 }
@@ -3588,7 +3588,7 @@ SVGs
 		.roll-counter {
 			margin-bottom: 30px;
 		}
-		.sydney_facts_widget .col-md-3:last-of-type .roll-counter {
+		.life_in_balance_facts_widget .col-md-3:last-of-type .roll-counter {
 			margin-bottom: 0;
 		}
 		.roll-counter .name-count {
@@ -3708,7 +3708,7 @@ SVGs
 	.mobile-slide {
 		display: none;
 	}
-	.sydney-hero-area {
+	.life_in_balance-hero-area {
 		overflow: hidden;
 	}
 

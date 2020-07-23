@@ -2,15 +2,15 @@
 /**
  * Services widget
  *
- * @package Sydney
+ * @package Life_In_Balance
  */
 
-class Sydney_Services_Type_B extends WP_Widget {
+class Life_In_Balance_Services_Type_B extends WP_Widget {
 
 	public function __construct() {
-		$widget_ops = array('classname' => 'sydney_services_b_widget', 'description' => __( 'Show what services you are able to provide.', 'sydney') );
-        parent::__construct(false, $name = __('Sydney FP: Services type B', 'sydney'), $widget_ops);
-		$this->alt_option_name = 'sydney_services_b_widget';		
+		$widget_ops = array('classname' => 'life_in_balance_services_b_widget', 'description' => __( 'Show what services you are able to provide.', 'life_in_balance') );
+        parent::__construct(false, $name = __('Life_In_Balance FP: Services type B', 'life_in_balance'), $widget_ops);
+		$this->alt_option_name = 'life_in_balance_services_b_widget';		
     }
 	
 	function form($instance) {
@@ -24,21 +24,21 @@ class Sydney_Services_Type_B extends WP_Widget {
 
 	?>
 
-	<p><?php _e('In order to display this widget, you must first add some services from your admin area.', 'sydney'); ?></p>
+	<p><?php _e('In order to display this widget, you must first add some services from your admin area.', 'life_in_balance'); ?></p>
 	<p>
-	<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'sydney'); ?></label>
+	<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'life_in_balance'); ?></label>
 	<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
 	</p>
-	<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of services to show (-1 shows all of them):', 'sydney' ); ?></label>
+	<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of services to show (-1 shows all of them):', 'life_in_balance' ); ?></label>
 	<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3" /></p>
-    <p><label for="<?php echo $this->get_field_id('see_all'); ?>"><?php _e('The URL for your button [In case you want a button below your services block]', 'sydney'); ?></label>
+    <p><label for="<?php echo $this->get_field_id('see_all'); ?>"><?php _e('The URL for your button [In case you want a button below your services block]', 'life_in_balance'); ?></label>
 	<input class="widefat custom_media_url" id="<?php echo $this->get_field_id( 'see_all' ); ?>" name="<?php echo $this->get_field_name( 'see_all' ); ?>" type="text" value="<?php echo $see_all; ?>" size="3" /></p>	
-    <p><label for="<?php echo $this->get_field_id('see_all_text'); ?>"><?php _e('The text for the button [Defaults to <em>See all our services</em> if left empty]', 'sydney'); ?></label>
+    <p><label for="<?php echo $this->get_field_id('see_all_text'); ?>"><?php _e('The text for the button [Defaults to <em>See all our services</em> if left empty]', 'life_in_balance'); ?></label>
 	<input class="widefat custom_media_url" id="<?php echo $this->get_field_id( 'see_all_text' ); ?>" name="<?php echo $this->get_field_name( 'see_all_text' ); ?>" type="text" value="<?php echo $see_all_text; ?>" size="3" /></p>
-	<p><label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php _e( 'Enter the slug for your category or leave empty to show all services.', 'sydney' ); ?></label>
+	<p><label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php _e( 'Enter the slug for your category or leave empty to show all services.', 'life_in_balance' ); ?></label>
 	<input class="widefat" id="<?php echo $this->get_field_id( 'category' ); ?>" name="<?php echo $this->get_field_name( 'category' ); ?>" type="text" value="<?php echo $category; ?>" size="3" /></p>
 	<p>
-	<label for="<?php echo $this->get_field_id('cols'); ?>"><?php _e( 'Number of columns:', 'sydney' ); ?></label>
+	<label for="<?php echo $this->get_field_id('cols'); ?>"><?php _e( 'Number of columns:', 'life_in_balance' ); ?></label>
 	<select name="<?php echo $this->get_field_name('cols'); ?>" id="<?php echo $this->get_field_id('cols'); ?>">
 	<?php
 	$options = array('1', '2', '3');
@@ -48,10 +48,10 @@ class Sydney_Services_Type_B extends WP_Widget {
 	?>
 	</select>
 	</p>
-	<p><label for="<?php echo $this->get_field_id('content_excerpt'); ?>"><?php _e('Content to display:', 'sydney'); ?></label>
+	<p><label for="<?php echo $this->get_field_id('content_excerpt'); ?>"><?php _e('Content to display:', 'life_in_balance'); ?></label>
         <select name="<?php echo $this->get_field_name('content_excerpt'); ?>" id="<?php echo $this->get_field_id('content_excerpt'); ?>">		
-			<option value="fullcontent" <?php if ( 'fullcontent' == $content_excerpt ) echo 'selected="selected"'; ?>><?php echo __('Full content', 'sydney'); ?></option>
-			<option value="excerpt" <?php if ( 'excerpt' == $content_excerpt ) echo 'selected="selected"'; ?>><?php echo __('Excerpt', 'sydney'); ?></option>
+			<option value="fullcontent" <?php if ( 'fullcontent' == $content_excerpt ) echo 'selected="selected"'; ?>><?php echo __('Full content', 'life_in_balance'); ?></option>
+			<option value="excerpt" <?php if ( 'excerpt' == $content_excerpt ) echo 'selected="selected"'; ?>><?php echo __('Excerpt', 'life_in_balance'); ?></option>
        	</select>
     </p>
 	<?php
@@ -119,9 +119,9 @@ class Sydney_Services_Type_B extends WP_Widget {
 								<?php if ( has_post_thumbnail() ) : ?>
 									<div class="service-thumb">
 										<?php if ($link) : ?>
-											<?php echo '<a href="' . esc_url($link) . '">' . get_the_post_thumbnail(get_the_ID(), 'sydney-service-thumb') . '</a>'; ?>
+											<?php echo '<a href="' . esc_url($link) . '">' . get_the_post_thumbnail(get_the_ID(), 'life_in_balance-service-thumb') . '</a>'; ?>
 										<?php else : ?>
-											<?php the_post_thumbnail('sydney-service-thumb'); ?>
+											<?php the_post_thumbnail('life_in_balance-service-thumb'); ?>
 										<?php endif; ?>
 									</div>
 								<?php elseif ($icon) : ?>			
@@ -157,7 +157,7 @@ class Sydney_Services_Type_B extends WP_Widget {
 						<?php if ($see_all_text) : ?>
 							<?php echo $see_all_text; ?>
 						<?php else : ?>
-							<?php echo __('See all our services', 'sydney'); ?>
+							<?php echo __('See all our services', 'life_in_balance'); ?>
 						<?php endif; ?>
 					</a>
 				<?php endif; ?>				

@@ -4,7 +4,7 @@
  * Integration with WPML for custom Elementor blocks
  */
 
-class Sydney_WPML {
+class Life_In_Balance_WPML {
 
     public function __construct() {
 		add_filter( 'wpml_elementor_widgets_to_translate', array( $this, 'translatable_widgets' ) );
@@ -15,19 +15,19 @@ class Sydney_WPML {
 		$widgets[ 'athemes-testimonials' ] = [
 			'conditions' => [ 'widgetType' => 'athemes-testimonials' ],
 			'fields'     => [],
-			'integration-class' => 'Sydney_WPML_Elementor_Testimonials',
+			'integration-class' => 'Life_In_Balance_WPML_Elementor_Testimonials',
 		];
 
 		$widgets[ 'athemes-employee-carousel' ] = [
 			'conditions' => [ 'widgetType' => 'athemes-employee-carousel' ],
 			'fields'     => [],
-			'integration-class' => 'Sydney_WPML_Elementor_Employees',
+			'integration-class' => 'Life_In_Balance_WPML_Elementor_Employees',
 		];
 		
 		$widgets[ 'athemes-portfolio' ] = [
 			'conditions' => [ 'widgetType' => 'athemes-portfolio' ],
 			'fields'     => [],
-			'integration-class' => 'Sydney_WPML_Elementor_Portfolio',
+			'integration-class' => 'Life_In_Balance_WPML_Elementor_Portfolio',
 		];		
 
 		$widgets[ 'athemes-posts' ] = [
@@ -35,7 +35,7 @@ class Sydney_WPML {
 			'fields'     => [
 				[
 					'field'       => 'see_all_text',
-					'type'        => __( '[aThemes Posts] See all button text', 'sydney' ),
+					'type'        => __( '[aThemes Posts] See all button text', 'life_in_balance' ),
 					'editor_type' => 'LINE'
 				],			 		  
 			],
@@ -47,10 +47,10 @@ class Sydney_WPML {
 	}
 	
 	private function load_integration_classes() {
-		require get_template_directory() . '/inc/wpml/class-sydney-wpml-testimonials.php';
-		require get_template_directory() . '/inc/wpml/class-sydney-wpml-employee-carousel.php';
-		require get_template_directory() . '/inc/wpml/class-sydney-wpml-portfolio.php';
+		require get_template_directory() . '/inc/wpml/class-life_in_balance-wpml-testimonials.php';
+		require get_template_directory() . '/inc/wpml/class-life_in_balance-wpml-employee-carousel.php';
+		require get_template_directory() . '/inc/wpml/class-life_in_balance-wpml-portfolio.php';
 	}
 }
 
-$sydney_wpml = new Sydney_WPML();
+$life_in_balance_wpml = new Life_In_Balance_WPML();

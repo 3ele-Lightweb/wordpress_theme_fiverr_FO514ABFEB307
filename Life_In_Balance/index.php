@@ -8,12 +8,12 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package Sydney
+ * @package Life_In_Balance
  */
 
 get_header(); ?>
 
-	<?php do_action('sydney_before_content'); ?>
+	<?php do_action('life_in_balance_before_content'); ?>
 
 	<div id="primary" class="content-area col-md-9">
 		<main id="main" class="post-wrap" role="main">
@@ -44,7 +44,7 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-	<?php do_action('sydney_after_content'); ?>
+	<?php do_action('life_in_balance_after_content'); ?>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

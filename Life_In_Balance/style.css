@@ -658,7 +658,8 @@ Header
 		left: 0;
 		width: 100%;
 		z-index: 1000;
-		background-color: transparent;
+		margin-top: 30px;
+		background-color: #ffffff !important;;
 		padding: 20px 0;
 		-webkit-transition: all 0.3s ease-out;
 		   -moz-transition: all 0.3s ease-out;
@@ -698,6 +699,7 @@ Header
 	}	
 	.site-header.fixed {
 		position: fixed;
+		margin-top: 0px;
 	}
 
 	.site-header .col-md-4,
